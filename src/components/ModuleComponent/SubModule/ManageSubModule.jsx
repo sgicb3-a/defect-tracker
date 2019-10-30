@@ -20,14 +20,6 @@ const useStyles = makeStyles(theme => ({
 
 const columns = [
   {
-    name: "ModuleId",
-    label: "Module Id",
-    options: {
-      filter: true,
-      sort: true
-    }
-  },
-  {
     name: "SubModuleId",
     label: "SubModule Id",
     options: {
@@ -42,14 +34,31 @@ const columns = [
       filter: true,
       sort: false
     }
+  },
+  {
+    name: "ModuleId",
+    label: "Module Id",
+    options: {
+      filter: true,
+      sort: true
+    }
+  },
+  {
+    name: "ProjectName",
+    label: "Project Name",
+    options: {
+      filter: true,
+      sort: false
+    }
   }
 ];
 
 const data = [
   {
-    ModuleId: "M-001",
     SubModuleId: "SM-001",
-    SubModuleName: "Project Menu"
+    SubModuleName: "Project Menu",
+    ModuleId: "M-001",
+    ProjectName: "CMS"
   }
 ];
 

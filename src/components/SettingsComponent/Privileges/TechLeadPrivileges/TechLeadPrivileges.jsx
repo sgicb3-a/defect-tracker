@@ -46,15 +46,12 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     overflowX: "auto"
   },
-  container: {
-    width: "60%"
-  },
   textField: {
     marginRight: theme.spacing(3),
     width: "250px"
   },
   table: {
-    maxWidth: 700
+    minWidth: 700
   },
   button: {
     marginTop: theme.spacing(2)

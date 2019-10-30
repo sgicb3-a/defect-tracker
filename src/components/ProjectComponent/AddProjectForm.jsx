@@ -26,6 +26,12 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(3),
     margin: theme.spacing(1),
     width: "230px"
+  },
+  descField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(3),
+    margin: theme.spacing(1),
+    width: "230px"
   }
 }));
 
@@ -88,7 +94,7 @@ export default function AddProjectForm() {
           <TextField
             required
             id="project-desc"
-            label="Duration"
+            label="Status"
             className={classes.textField}
             margin="normal"
             variant="outlined"
@@ -96,10 +102,12 @@ export default function AddProjectForm() {
           <TextField
             required
             id="project-desc"
-            label="Status"
-            className={classes.textField}
+            label="Description"
+            className={classes.descField}
             margin="normal"
             variant="outlined"
+            multiline
+            rows="2"
           />
         </Grid>
       </form>

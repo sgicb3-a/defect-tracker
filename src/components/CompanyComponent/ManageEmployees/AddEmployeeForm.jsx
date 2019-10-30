@@ -5,6 +5,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,6 +24,14 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(3),
     margin: theme.spacing(1),
     width: "230px"
+  },
+  button: {
+    marginRight: theme.spacing(3),
+    marginTop: theme.spacing(2),
+    width: "230px"
+  },
+  input: {
+    display: "none"
   }
 }));
 
@@ -41,29 +50,11 @@ export default function AddEmployeeForm() {
           <TextField
             required
             id="project-name"
-            label="Employee Id"
-            className={classes.textField}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            required
-            id="project-name"
             label="Employee Name"
             className={classes.textField}
             margin="normal"
             variant="outlined"
           />
-          <FormControl
-            required
-            variant="outlined"
-            className={classes.formControl}
-          >
-            <InputLabel ref={inputLabel} htmlFor="defect-severity">
-              Designation
-            </InputLabel>
-            <Select labelWidth={labelWidth}></Select>
-          </FormControl>
           <TextField
             required
             id="project-desc"
@@ -72,6 +63,28 @@ export default function AddEmployeeForm() {
             margin="normal"
             variant="outlined"
           />
+          <FormControl required className={classes.formControl}>
+            <InputLabel ref={inputLabel} htmlFor="defect-severity">
+              Designation
+            </InputLabel>
+            <Select labelWidth={labelWidth}></Select>
+          </FormControl>
+          <input
+            accept="image/*"
+            className={classes.input}
+            id="contained-button-file"
+            multiple
+            type="file"
+          />
+          <label htmlFor="contained-button-file">
+            <Button
+              variant="outlined"
+              component="span"
+              className={classes.button}
+            >
+              Upload Employee Photo
+            </Button>
+          </label>
         </Grid>
       </form>
     </div>

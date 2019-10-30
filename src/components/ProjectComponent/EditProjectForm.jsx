@@ -26,6 +26,12 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(3),
     margin: theme.spacing(1),
     width: "230px"
+  },
+  descField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(3),
+    margin: theme.spacing(1),
+    width: "230px"
   }
 }));
 
@@ -59,7 +65,7 @@ export default function EditProjectForm() {
             className={classes.textField}
             margin="normal"
             variant="outlined"
-            value="Private"
+            value="Product"
           />
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
@@ -67,7 +73,7 @@ export default function EditProjectForm() {
               id="date-picker-dialog"
               label="Start Date"
               className={classes.dateField}
-              value="01/03/2019"
+              value={selectedDate}
               onChange={handleDateChange}
               format="MM/dd/yyyy"
               KeyboardButtonProps={{
@@ -79,7 +85,7 @@ export default function EditProjectForm() {
               id="date-picker-dialog"
               label="End Date"
               className={classes.dateField}
-              value="10/03/2019"
+              value={selectedDate}
               onChange={handleDateChange}
               format="MM/dd/yyyy"
               KeyboardButtonProps={{
@@ -90,20 +96,22 @@ export default function EditProjectForm() {
           <TextField
             required
             id="project-desc"
-            label="Duration"
-            className={classes.textField}
-            margin="normal"
-            variant="outlined"
-            value="10"
-          />
-          <TextField
-            required
-            id="project-desc"
             label="Status"
             className={classes.textField}
             margin="normal"
             variant="outlined"
             value="finished"
+          />
+          <TextField
+            required
+            id="project-desc"
+            label="Description"
+            className={classes.descField}
+            margin="normal"
+            variant="outlined"
+            multiline
+            rows="2"
+            value="It's our product"
           />
         </Grid>
       </form>

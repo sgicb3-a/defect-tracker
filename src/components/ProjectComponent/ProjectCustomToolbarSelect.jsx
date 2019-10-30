@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import EditIcon from "@material-ui/icons/Edit";
 import Fab from "@material-ui/core/Fab";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ViewIcon from "@material-ui/icons/AspectRatio";
 import Dialog from "@material-ui/core/Dialog";
@@ -19,9 +21,6 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     marginTop: theme.spacing(3),
     overflowX: "auto"
-  },
-  fab: {
-    margin: theme.spacing(1)
   }
 }));
 
@@ -57,15 +56,18 @@ export default function ProjectCustomToolbarSelect() {
 
   return (
     <div>
-      <Fab
-        color="secondary"
-        aria-label="edit"
-        className={classes.fab}
-        size="small"
-        onClick={handleViewOpen}
-      >
-        <ViewIcon />
-      </Fab>
+      <Tooltip title={"View"}>
+        <IconButton className={classes.iconButton} onClick={handleViewOpen}>
+          <Fab
+            color="secondary"
+            aria-label="view"
+            className={classes.fab}
+            size="small"
+          >
+            <ViewIcon />
+          </Fab>
+        </IconButton>
+      </Tooltip>
 
       <Dialog
         open={openView}
@@ -86,15 +88,18 @@ export default function ProjectCustomToolbarSelect() {
         </DialogActions>
       </Dialog>
 
-      <Fab
-        color="secondary"
-        aria-label="edit"
-        className={classes.fab}
-        size="small"
-        onClick={handleEditOpen}
-      >
-        <EditIcon />
-      </Fab>
+      <Tooltip title={"Edit"}>
+        <IconButton className={classes.iconButton} onClick={handleEditOpen}>
+          <Fab
+            color="secondary"
+            aria-label="edit"
+            className={classes.fab}
+            size="small"
+          >
+            <EditIcon />
+          </Fab>
+        </IconButton>
+      </Tooltip>
 
       <Dialog
         open={openEdit}
@@ -118,15 +123,18 @@ export default function ProjectCustomToolbarSelect() {
         </DialogActions>
       </Dialog>
 
-      <Fab
-        color="default"
-        aria-label="delete"
-        className={classes.fab}
-        size="small"
-        onClick={handleDeleteOpen}
-      >
-        <DeleteIcon />
-      </Fab>
+      <Tooltip title={"Delete"}>
+        <IconButton className={classes.iconButton} onClick={handleDeleteOpen}>
+          <Fab
+            color="default"
+            aria-label="delete"
+            className={classes.fab}
+            size="small"
+          >
+            <DeleteIcon />
+          </Fab>
+        </IconButton>
+      </Tooltip>
 
       <Dialog
         open={openDelete}

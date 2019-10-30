@@ -31,11 +31,7 @@ export default function AddHRAllocationForm() {
     <div>
       <form className={classes.container} autoComplete="off">
         <Grid container justify="flex-start">
-          <FormControl
-            required
-            variant="outlined"
-            className={classes.formControl}
-          >
+          <FormControl required className={classes.formControl}>
             <InputLabel ref={inputLabel} htmlFor="defect-severity">
               Select Project
             </InputLabel>

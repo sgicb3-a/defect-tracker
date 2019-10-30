@@ -3,7 +3,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
+import Links from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
@@ -37,6 +37,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignIn() {
   const classes = useStyles();
+
+  const enterApp = () => {
+    window.location.href = "http://localhost:3000/dashboard/company";
+    return null;
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -72,7 +77,8 @@ export default function SignIn() {
             autoComplete="current-password"
           />
           <Button
-            type="submit"
+            //type="submit"
+            onClick={enterApp}
             fullWidth
             variant="contained"
             color="primary"
@@ -82,9 +88,9 @@ export default function SignIn() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="/forgot-password" variant="body2">
+              <Links href="/forgot-password" variant="body2">
                 Forgot password?
-              </Link>
+              </Links>
             </Grid>
           </Grid>
         </form>

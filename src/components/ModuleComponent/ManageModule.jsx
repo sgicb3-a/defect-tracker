@@ -34,13 +34,22 @@ const columns = [
       filter: true,
       sort: false
     }
+  },
+  {
+    name: "ProjectName",
+    label: "Project Name",
+    options: {
+      filter: true,
+      sort: false
+    }
   }
 ];
 
 const data = [
   {
     ModuleId: "M-001",
-    ModuleName: "Left Drawer"
+    ModuleName: "Left Drawer",
+    ProjectName: "CMS"
   }
 ];
 

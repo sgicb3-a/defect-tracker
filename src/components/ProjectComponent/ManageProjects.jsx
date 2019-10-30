@@ -60,14 +60,6 @@ const columns = [
     }
   },
   {
-    name: "Duration",
-    label: "Duration",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
     name: "Status",
     label: "Status",
     options: {
@@ -76,8 +68,8 @@ const columns = [
     }
   },
   {
-    name: "ConfigId",
-    label: "Config Id",
+    name: "Description",
+    label: "Description",
     options: {
       filter: true,
       sort: false
@@ -89,12 +81,11 @@ const data = [
   {
     ProjectId: "P-100",
     ProjectName: "CMS",
-    Type: "Private",
+    Type: "Product",
     StartDate: "03-01-2019",
     EndDate: "03-10-2019",
-    Duration: "10 months",
     Status: "Finished",
-    ConfigId: "CFG-12"
+    Description: "It's our product"
   }
 ];
 

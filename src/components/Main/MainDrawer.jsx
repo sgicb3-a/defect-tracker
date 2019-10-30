@@ -138,6 +138,9 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3)
+  },
+  avatar: {
+    margin: 5
   }
 }));
 
@@ -208,6 +211,11 @@ export default function MainDrawer() {
     setOpen(false);
   };
 
+  const exitApp = () => {
+    window.location.href = "http://localhost:3000/";
+    return null;
+  };
+
   return (
     <Router>
       <div className={classes.root}>
@@ -265,10 +273,15 @@ export default function MainDrawer() {
                 </IconButton>
               </Tooltip>
               <Tooltip title={"Logout"}>
-                <IconButton aria-label="help" color="inherit">
+                <IconButton aria-label="help" color="inherit" onClick={exitApp}>
                   <ExitToAppIcon />
                 </IconButton>
               </Tooltip>
+              <Avatar
+                alt="Remy Sharp"
+                src="https://material-ui.com/static/images/avatar/1.jpg"
+                className={classes.avatar}
+              />
             </div>
           </Toolbar>
         </AppBar>

@@ -38,34 +38,20 @@ export default function AddSubModuleForm() {
     <div>
       <form className={classes.container} autoComplete="off">
         <Grid container justify="space-between">
-          <FormControl
-            required
-            variant="outlined"
-            className={classes.formControl}
-          >
+          <FormControl required className={classes.formControl}>
             <InputLabel ref={inputLabel} htmlFor="defect-severity">
               Module Id
             </InputLabel>
-            <Select labelWidth={labelWidth} value="Select"></Select>
+            <Select labelWidth={labelWidth}></Select>
           </FormControl>
-          <div>
-            <TextField
-              required
-              id="project-name"
-              label="Sub Module Id"
-              className={classes.textField}
-              margin="normal"
-              variant="outlined"
-            />
-            <TextField
-              required
-              id="project-name"
-              label="Sub Module Name"
-              className={classes.textField}
-              margin="normal"
-              variant="outlined"
-            />
-          </div>
+          <TextField
+            required
+            id="project-name"
+            label="Sub Module Name"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+          />
         </Grid>
       </form>
     </div>

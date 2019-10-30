@@ -38,13 +38,12 @@ export default function ModuleCustomToolbar() {
   return (
     <React.Fragment>
       <Tooltip title={"Add"}>
-        <IconButton className={classes.iconButton}>
+        <IconButton className={classes.iconButton} onClick={handleAddOpen}>
           <Fab
             color="primary"
             aria-label="add"
             className={classes.fab}
             size="small"
-            onClick={handleAddOpen}
           >
             <AddIcon />
           </Fab>

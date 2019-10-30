@@ -37,7 +37,7 @@ export default function ViewProjectForm() {
             <Divider />
             <tr>
               <td>Project Type</td>
-              <td>Private</td>
+              <td>Product</td>
             </tr>
             <Divider />
             <tr>
@@ -58,6 +58,11 @@ export default function ViewProjectForm() {
             <tr>
               <td>Project Status</td>
               <td>Finished</td>
+            </tr>
+            <Divider />
+            <tr>
+              <td>Project Description</td>
+              <td>it's our product</td>
             </tr>
           </table>
         </Grid>

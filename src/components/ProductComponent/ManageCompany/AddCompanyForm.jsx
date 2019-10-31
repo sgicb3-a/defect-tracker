@@ -95,8 +95,8 @@ export default function AddCompanyForm() {
           />
           <TextField
             required
-            id="project-name"
-            label="IT Admin"
+            id="project-desc"
+            label="Email"
             className={classes.textField}
             margin="normal"
             variant="outlined"
@@ -116,21 +116,6 @@ export default function AddCompanyForm() {
               <MenuItem value="Bronze">Bronze</MenuItem>
             </Select>
           </FormControl>
-          <FormControl required className={classes.formControl}>
-            <InputLabel ref={inputLabel} htmlFor="defect-severity">
-              License Period
-            </InputLabel>
-            <Select
-              labelWidth={labelWidth}
-              value={value}
-              onChange={handleChange}
-            >
-              <MenuItem value="5 Years">5 years</MenuItem>
-              <MenuItem value="3 Years">3 Years</MenuItem>
-              <MenuItem value="2 Years">2 Years</MenuItem>
-              <MenuItem value="1 Year">1 year</MenuItem>
-            </Select>
-          </FormControl>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
               margin="normal"
@@ -144,33 +129,19 @@ export default function AddCompanyForm() {
                 "aria-label": "change date"
               }}
             />
-            <KeyboardDatePicker
-              margin="normal"
-              id="date-picker-dialog"
-              label="End Date"
-              className={classes.dateField}
-              value={selectedDate}
-              onChange={handleDateChange}
-              format="MM/dd/yyyy"
-              KeyboardButtonProps={{
-                "aria-label": "change date"
-              }}
-            />
           </MuiPickersUtilsProvider>
           <TextField
             required
-            id="project-desc"
-            label="Email"
+            id="project-name"
+            label="Contact Person"
             className={classes.textField}
             margin="normal"
             variant="outlined"
           />
           <TextField
             required
-            id="project-desc"
-            label="Description"
-            multiline
-            rows="2"
+            id="project-name"
+            label="Contact No"
             className={classes.textField}
             margin="normal"
             variant="outlined"

@@ -289,7 +289,7 @@ export default function MainDrawer({ onToggleDark }) {
                   <ExitToAppIcon />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={"Remy Sharp"}>
+              <Tooltip title={"Logged in user"}>
                 <Avatar
                   alt="Remy Sharp"
                   src="https://material-ui.com/static/images/avatar/1.jpg"

@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
-import CompanyCustomToolbar from "./CompanyCustomToolbar";
-import CompanyCustomToolbarSelect from "./CompanyCustomToolbarSelect";
+import ClientCustomToolbar from "./ClientCustomToolbar";
+import ClientCustomToolbarSelect from "./ClientCustomToolbarSelect";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,40 +20,48 @@ const useStyles = makeStyles(theme => ({
 
 const columns = [
   {
-    name: "CompanyName",
-    label: "Company Name",
+    name: "ClientName",
+    label: "Client Name",
     options: {
       filter: true,
       sort: false
     }
   },
   {
-    name: "Abbreviation",
-    label: "Abbreviation",
+    name: "ClientEmail",
+    label: "Client Email",
     options: {
       filter: true,
       sort: false
     }
   },
   {
-    name: "RegistrationId",
-    label: "Registration Id",
+    name: "ClientType",
+    label: "Client Type",
     options: {
       filter: true,
       sort: true
     }
   },
   {
-    name: "LicensePeriod",
-    label: "License Period",
+    name: "JoinedDate",
+    label: "Client Joined Date",
     options: {
       filter: true,
       sort: false
     }
   },
   {
-    name: "ITAdmin",
-    label: "IT Admin",
+    name: "ContactPerson",
+    label: "Contact Person",
+    options: {
+      filter: true,
+      sort: false
+    }
+  },
+  {
+    name: "ContactNo",
+    label: "Contact No",
     options: {
       filter: true,
       sort: false
@@ -63,11 +71,12 @@ const columns = [
 
 const data = [
   {
-    CompanyName: "Samuel Gnanam IT Centre",
-    Abbreviation: "SGIC",
-    RegistrationId: "LK-254",
-    LicensePeriod: "2 Years",
-    ITAdmin: "Thiru"
+    ClientName: "LOLC",
+    ClientEmail: "admin@lolc.com",
+    ClientType: "Private",
+    JoinedDate: "27-06-2019",
+    ContactPerson: "Sinthujan",
+    ContactNo: "0777123456"
   }
 ];
 
@@ -76,14 +85,14 @@ const options = {
   selectableRows: "single",
   selectableRowsOnClick: true,
   customToolbar: () => {
-    return <CompanyCustomToolbar />;
+    return <ClientCustomToolbar />;
   },
   customToolbarSelect: () => {
-    return <CompanyCustomToolbarSelect />;
+    return <ClientCustomToolbarSelect />;
   }
 };
 
-export default function ManageCompany() {
+export default function ManageClient() {
   const classes = useStyles();
 
   return (

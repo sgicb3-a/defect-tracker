@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
-import DefectCustomToolbar from "./DefectCustomToolbar";
-import DefectCustomToolbarSelect from "./DefectCustomToolbarSelect";
+import CompanyCustomToolbar from "./CompanyCustomToolbar";
+import CompanyCustomToolbarSelect from "./CompanyCustomToolbarSelect";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,64 +20,40 @@ const useStyles = makeStyles(theme => ({
 
 const columns = [
   {
-    name: "DefectId",
-    label: "Defect Id",
+    name: "CompanyName",
+    label: "Company Name",
+    options: {
+      filter: true,
+      sort: false
+    }
+  },
+  {
+    name: "Email",
+    label: "Email",
+    options: {
+      filter: true,
+      sort: false
+    }
+  },
+  {
+    name: "LicenseType",
+    label: "License Type",
     options: {
       filter: true,
       sort: true
     }
   },
   {
-    name: "DefectName",
-    label: "Defect Name",
+    name: "LicenseStart",
+    label: "License Start Date",
     options: {
       filter: true,
       sort: false
     }
   },
   {
-    name: "ProjectName",
-    label: "Project",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "ModuleName",
-    label: "Module",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "SubmoduleName",
-    label: "Submodule",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "Severity",
-    label: "Severity",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "Priority",
-    label: "Priority",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "Status",
-    label: "Status",
+    name: "LicenseExpire",
+    label: "License Expiry Date",
     options: {
       filter: true,
       sort: false
@@ -87,14 +63,11 @@ const columns = [
 
 const data = [
   {
-    DefectId: "D-100",
-    DefectName: "Dropdown not working",
-    ProjectName: "CMS",
-    ModuleName: "UI",
-    SubmoduleName: "Left Drawer",
-    Severity: "High",
-    Priority: "Urgent",
-    Status: "New"
+    CompanyName: "Samuel Gnanam IT Centre",
+    Email: "admin@sgic.com",
+    LicenseType: "Platinum",
+    LicenseStart: "12-03-2019",
+    LicenseExpire: "12-03-2024"
   }
 ];
 
@@ -103,14 +76,14 @@ const options = {
   selectableRows: "single",
   selectableRowsOnClick: true,
   customToolbar: () => {
-    return <DefectCustomToolbar />;
+    return <CompanyCustomToolbar />;
   },
   customToolbarSelect: () => {
-    return <DefectCustomToolbarSelect />;
+    return <CompanyCustomToolbarSelect />;
   }
 };
 
-export default function ManageDefects() {
+export default function ManageCompany() {
   const classes = useStyles();
 
   return (

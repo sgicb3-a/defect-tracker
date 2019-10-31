@@ -57,14 +57,6 @@ const columns = [
       filter: true,
       sort: false
     }
-  },
-  {
-    name: "ConfigId",
-    label: "Config Id",
-    options: {
-      filter: true,
-      sort: false
-    }
   }
 ];
 
@@ -76,8 +68,7 @@ const data = [
     StartDate: "03-01-2019",
     EndDate: "03-10-2019",
     Duration: "10 months",
-    Status: "Finished",
-    ConfigId: "CFG-12"
+    Status: "Finished"
   },
   {
     ProjectId: "P-100",
@@ -86,8 +77,7 @@ const data = [
     StartDate: "03-01-2019",
     EndDate: "03-10-2019",
     Duration: "10 months",
-    Status: "Finished",
-    ConfigId: "CFG-12"
+    Status: "Finished"
   },
   {
     ProjectId: "P-100",
@@ -96,8 +86,7 @@ const data = [
     StartDate: "03-01-2019",
     EndDate: "03-10-2019",
     Duration: "10 months",
-    Status: "Finished",
-    ConfigId: "CFG-12"
+    Status: "Finished"
   }
 ];
 

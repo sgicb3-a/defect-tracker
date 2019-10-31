@@ -5,17 +5,16 @@ import Typography from "@material-ui/core/Typography";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import CompanyDashboard from "../DashboardComponent/Company/CompanyDashboard";
-import DefectDashboard from "../DashboardComponent/Defect/DefectDashboard";
 import DeveloperDashboard from "../DashboardComponent/Developer/DeveloperDashboard";
 import ProjectManagerDashboard from "../DashboardComponent/ProjectManager/ProjectManagerDashboard";
 import QADashboard from "../DashboardComponent/QA/QADashboard";
-import ManageCompany from "../ProductAdministration/ManageCompany/ManageCompany";
+import ManageCompany from "../ProductComponent/ManageCompany/ManageCompany";
 import ManageEmployee from "../CompanyComponent/ManageEmployees/ManageEmployee";
-import HRAllocation from "../CompanyComponent/HRAllocation/ManageHRAllocation";
+import HRAllocation from "../AllocationComponent/HRAllocation/ManageHRAllocation";
 import ManageModule from "../ModuleComponent/ManageModule";
 import ManageSubmodule from "../ModuleComponent/SubModule/ManageSubModule";
-import RoleAllocation from "../ProjectAllocationComponent/RoleAllocation/ManageRoleAllocation";
-import ModuleAllocation from "../ProjectAllocationComponent/ModuleAllocation/ManageModuleAllocation";
+import RoleAllocation from "../AllocationComponent/RoleAllocation/ManageRoleAllocation";
+import ModuleAllocation from "../AllocationComponent/ModuleAllocation/ManageModuleAllocation";
 import ManageProject from "../ProjectComponent/ManageProjects";
 import ManageDefect from "../DefectComponent/ManageDefects";
 import DefectPriority from "../SettingsComponent/DefectConfiguration/Priority/ManageDefectPriority";
@@ -29,10 +28,11 @@ import TechLeadPriviles from "../SettingsComponent/Privileges/TechLeadPrivileges
 import AuditLog from "../SettingsComponent/AuditLog/ManageLog";
 import AddDefectForm from "../DefectComponent/AddDefectForm";
 import ProductDashboard from "../DashboardComponent/Product/ProductDashboard";
-import ManageLicense from "../ProductAdministration/ManageLicense/ManageLicense";
+import ManageLicense from "../ProductComponent/ManageLicense/ManageLicense";
 import CompanyProfile from "../SettingsComponent/CompanyProfile/CompanyProfile";
 import DefectRoleFlow from "../SettingsComponent/WorkFlow/DefectRoleFlow/DefectRoleFlow";
 import DefectStatusFlow from "../SettingsComponent/WorkFlow/DefectStatusFlow/DefectStatusFlow";
+import ManageClient from "../CompanyComponent/ManageClients/ManageClient";
 
 export default function RouteDetails() {
   return (
@@ -48,18 +48,6 @@ export default function RouteDetails() {
             <Typography color="textPrimary">Company</Typography>
           </Breadcrumbs>
           <CompanyDashboard />
-        </Route>
-
-        <Route path="/defect-tracker/dashboard/defect">
-          <Breadcrumbs
-            separator={<NavigateNextIcon fontSize="small" />}
-            aria-label="breadcrumb"
-          >
-            <Links color="inherit">Home</Links>
-            <Links color="inherit">Dashboard</Links>
-            <Typography color="textPrimary">Defect</Typography>
-          </Breadcrumbs>
-          <DefectDashboard />
         </Route>
 
         <Route path="/defect-tracker/dashboard/developer">
@@ -146,16 +134,16 @@ export default function RouteDetails() {
           <ManageEmployee />
         </Route>
 
-        <Route path="/defect-tracker/company-administration/hr-allocation">
+        <Route path="/defect-tracker/company-administration/manage-client">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
           >
             <Links color="inherit">Home</Links>
-            <Links color="inherit">Company Administration</Links>
-            <Typography color="textPrimary">HR Allocation</Typography>
+            <Links color="inherit">Company Adminstration</Links>
+            <Typography color="textPrimary">Manage Client</Typography>
           </Breadcrumbs>
-          <HRAllocation />
+          <ManageClient />
         </Route>
 
         <Route path="/defect-tracker/manage-project">
@@ -167,30 +155,6 @@ export default function RouteDetails() {
             <Typography color="textPrimary">Manage Project</Typography>
           </Breadcrumbs>
           <ManageProject />
-        </Route>
-
-        <Route path="/defect-tracker/project-allocation/role-allocation">
-          <Breadcrumbs
-            separator={<NavigateNextIcon fontSize="small" />}
-            aria-label="breadcrumb"
-          >
-            <Links color="inherit">Home</Links>
-            <Links color="inherit">Project Allocation</Links>
-            <Typography color="textPrimary">Role Allocation</Typography>
-          </Breadcrumbs>
-          <RoleAllocation />
-        </Route>
-
-        <Route path="/defect-tracker/project-allocation/module-allocation">
-          <Breadcrumbs
-            separator={<NavigateNextIcon fontSize="small" />}
-            aria-label="breadcrumb"
-          >
-            <Links color="inherit">Home</Links>
-            <Links color="inherit">Project Allocation</Links>
-            <Typography color="textPrimary">Module Allocation</Typography>
-          </Breadcrumbs>
-          <ModuleAllocation />
         </Route>
 
         <Route path="/defect-tracker/module/manage-module">
@@ -215,6 +179,42 @@ export default function RouteDetails() {
             <Typography color="textPrimary">Manage Submodule</Typography>
           </Breadcrumbs>
           <ManageSubmodule />
+        </Route>
+
+        <Route path="/defect-tracker/project-allocation/hr-allocation">
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="small" />}
+            aria-label="breadcrumb"
+          >
+            <Links color="inherit">Home</Links>
+            <Links color="inherit">Project Allocation</Links>
+            <Typography color="textPrimary">HR Allocation</Typography>
+          </Breadcrumbs>
+          <HRAllocation />
+        </Route>
+
+        <Route path="/defect-tracker/project-allocation/role-allocation">
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="small" />}
+            aria-label="breadcrumb"
+          >
+            <Links color="inherit">Home</Links>
+            <Links color="inherit">Project Allocation</Links>
+            <Typography color="textPrimary">Role Allocation</Typography>
+          </Breadcrumbs>
+          <RoleAllocation />
+        </Route>
+
+        <Route path="/defect-tracker/project-allocation/module-allocation">
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="small" />}
+            aria-label="breadcrumb"
+          >
+            <Links color="inherit">Home</Links>
+            <Links color="inherit">Project Allocation</Links>
+            <Typography color="textPrimary">Module Allocation</Typography>
+          </Breadcrumbs>
+          <ModuleAllocation />
         </Route>
 
         <Route exact path="/defect-tracker/manage-defect">

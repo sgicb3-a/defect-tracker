@@ -7,6 +7,7 @@ import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -70,11 +71,13 @@ export default function ChangePassword() {
             autoComplete="current-password"
           />
           <Button
-            type="submit"
+            //type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            component={Link}
+            to={"/defect-tracker/login"}
           >
             Submit
           </Button>

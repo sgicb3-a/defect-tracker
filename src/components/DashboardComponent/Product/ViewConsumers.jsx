@@ -3,14 +3,6 @@ import MUIDataTable from "mui-datatables";
 
 const columns = [
   {
-    name: "RegistrationId",
-    label: "Registration Id",
-    options: {
-      filter: true,
-      sort: true
-    }
-  },
-  {
     name: "CompanyName",
     label: "Company Name",
     options: {
@@ -19,24 +11,32 @@ const columns = [
     }
   },
   {
-    name: "Abbreviation",
-    label: "Abbreviation",
+    name: "Email",
+    label: "Email",
     options: {
       filter: true,
       sort: false
     }
   },
   {
-    name: "LicensePeriod",
-    label: "License Period",
+    name: "LicenseType",
+    label: "License Type",
+    options: {
+      filter: true,
+      sort: true
+    }
+  },
+  {
+    name: "LicenseStart",
+    label: "License Start Date",
     options: {
       filter: true,
       sort: false
     }
   },
   {
-    name: "ITAdmin",
-    label: "IT Admin",
+    name: "LicenseExpire",
+    label: "License Expiry Date",
     options: {
       filter: true,
       sort: false
@@ -46,25 +46,25 @@ const columns = [
 
 const data = [
   {
-    RegistrationId: "LK-254",
     CompanyName: "Samuel Gnanam IT Centre",
-    Abbreviation: "SGIC",
-    LicensePeriod: "2 Years",
-    ITAdmin: "Thiru"
+    Email: "admin@sgic.com",
+    LicenseType: "Platinum",
+    LicenseStart: "12-03-2019",
+    LicenseExpire: "12-03-2024"
   },
   {
-    RegistrationId: "LK-254",
     CompanyName: "Samuel Gnanam IT Centre",
-    Abbreviation: "SGIC",
-    LicensePeriod: "2 Years",
-    ITAdmin: "Thiru"
+    Email: "admin@sgic.com",
+    LicenseType: "Platinum",
+    LicenseStart: "12-03-2019",
+    LicenseExpire: "12-03-2024"
   },
   {
-    RegistrationId: "LK-254",
     CompanyName: "Samuel Gnanam IT Centre",
-    Abbreviation: "SGIC",
-    LicensePeriod: "2 Years",
-    ITAdmin: "Thiru"
+    Email: "admin@sgic.com",
+    LicenseType: "Platinum",
+    LicenseStart: "12-03-2019",
+    LicenseExpire: "12-03-2024"
   }
 ];
 

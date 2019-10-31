@@ -7,6 +7,7 @@ import HelpIcon from "@material-ui/icons/Help";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -59,11 +60,13 @@ export default function ForgotPassword() {
             autoFocus
           />
           <Button
-            type="submit"
+            //type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            component={Link}
+            to={"/defect-tracker/change-password"}
           >
             Submit
           </Button>

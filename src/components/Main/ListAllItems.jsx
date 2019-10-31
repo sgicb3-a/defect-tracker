@@ -111,14 +111,6 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/defect-tracker/dashboard/defect"}
-            >
-              <ListItemText primary="Defect" />
-            </ListItem>
-            <ListItem
-              button
-              className={classes.nested}
-              component={Link}
               to={"/defect-tracker/dashboard/developer"}
             >
               <ListItemText primary="Developer" />
@@ -199,9 +191,9 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/defect-tracker/company-administration/hr-allocation"}
+              to={"/defect-tracker/company-administration/manage-client"}
             >
-              <ListItemText primary="HR Allocation" />
+              <ListItemText primary="Manage Client" />
             </ListItem>
           </List>
         </Collapse>
@@ -212,34 +204,6 @@ export default function ListAllItems() {
           </ListItemIcon>
           <ListItemText primary="Project" />
         </ListItem>
-
-        <ListItem button onClick={handleProjectAllocationClick}>
-          <ListItemIcon>
-            <AllocationIcon />
-          </ListItemIcon>
-          <ListItemText primary="Allocation" />
-          {openProjectAllocation ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse in={openProjectAllocation} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItem
-              button
-              className={classes.nested}
-              component={Link}
-              to={"/defect-tracker/project-allocation/role-allocation"}
-            >
-              <ListItemText primary="Role Allocation" />
-            </ListItem>
-            <ListItem
-              button
-              className={classes.nested}
-              component={Link}
-              to={"/defect-tracker/project-allocation/module-allocation"}
-            >
-              <ListItemText primary="Module Allocation" />
-            </ListItem>
-          </List>
-        </Collapse>
 
         <ListItem button onClick={handleModuleClick}>
           <ListItemIcon>
@@ -265,6 +229,42 @@ export default function ListAllItems() {
               to={"/defect-tracker/module/manage-submodule"}
             >
               <ListItemText primary="Manage Submodule" />
+            </ListItem>
+          </List>
+        </Collapse>
+
+        <ListItem button onClick={handleProjectAllocationClick}>
+          <ListItemIcon>
+            <AllocationIcon />
+          </ListItemIcon>
+          <ListItemText primary="Allocation" />
+          {openProjectAllocation ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={openProjectAllocation} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to={"/defect-tracker/project-allocation/hr-allocation"}
+            >
+              <ListItemText primary="HR Allocation" />
+            </ListItem>
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to={"/defect-tracker/project-allocation/role-allocation"}
+            >
+              <ListItemText primary="Role Allocation" />
+            </ListItem>
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to={"/defect-tracker/project-allocation/module-allocation"}
+            >
+              <ListItemText primary="Module Allocation" />
             </ListItem>
           </List>
         </Collapse>

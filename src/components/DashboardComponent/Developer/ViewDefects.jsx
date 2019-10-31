@@ -11,8 +11,32 @@ const columns = [
     }
   },
   {
+    name: "DefectName",
+    label: "Defect Name",
+    options: {
+      filter: true,
+      sort: false
+    }
+  },
+  {
+    name: "ProjectName",
+    label: "Project",
+    options: {
+      filter: true,
+      sort: false
+    }
+  },
+  {
     name: "ModuleName",
-    label: "Module Name",
+    label: "Module",
+    options: {
+      filter: true,
+      sort: false
+    }
+  },
+  {
+    name: "SubmoduleName",
+    label: "Submodule",
     options: {
       filter: true,
       sort: false
@@ -35,14 +59,6 @@ const columns = [
     }
   },
   {
-    name: "TypeId",
-    label: "Type Id",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
     name: "Status",
     label: "Status",
     options: {
@@ -55,26 +71,32 @@ const columns = [
 const data = [
   {
     DefectId: "D-100",
+    DefectName: "Dropdown not working",
+    ProjectName: "CMS",
     ModuleName: "UI",
+    SubmoduleName: "Left Drawer",
     Severity: "High",
     Priority: "Urgent",
-    TypeId: "T-120",
     Status: "New"
   },
   {
     DefectId: "D-100",
+    DefectName: "Dropdown not working",
+    ProjectName: "CMS",
     ModuleName: "UI",
+    SubmoduleName: "Left Drawer",
     Severity: "High",
     Priority: "Urgent",
-    TypeId: "T-120",
     Status: "New"
   },
   {
     DefectId: "D-100",
+    DefectName: "Dropdown not working",
+    ProjectName: "CMS",
     ModuleName: "UI",
+    SubmoduleName: "Left Drawer",
     Severity: "High",
     Priority: "Urgent",
-    TypeId: "T-120",
     Status: "New"
   }
 ];

@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(3),
+    marginBottom: theme.spacing(3),
     margin: theme.spacing(1),
     width: "230px"
   },
@@ -36,11 +37,12 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(3),
     margin: theme.spacing(1),
-    width: "360px"
+    width: "363px"
   },
   formControl: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(3),
+    marginBottom: theme.spacing(3),
     margin: theme.spacing(1),
     width: "230px",
     textAlign: "left"
@@ -48,6 +50,7 @@ const useStyles = makeStyles(theme => ({
   buttonUpload: {
     marginRight: theme.spacing(3),
     marginTop: theme.spacing(2.5),
+    marginBottom: theme.spacing(3),
     marginLeft: theme.spacing(1),
     width: "230px"
   },
@@ -84,7 +87,7 @@ export default function AddDefectForm() {
           }}
         >
           <form className={classes.container} autoComplete="off">
-            <Grid container direction="column">
+            <Grid container direction="column" alignItems="center">
               <div>
                 <TextField
                   required
@@ -215,7 +218,7 @@ export default function AddDefectForm() {
                 className={classes.button}
                 color="primary"
                 component={Link}
-                to={"/manage-defect"}
+                to={"/defect-tracker/manage-defect"}
               >
                 Cancel
               </Button>
@@ -224,7 +227,7 @@ export default function AddDefectForm() {
                 variant="contained"
                 color="primary"
                 component={Link}
-                to={"/manage-defect"}
+                to={"/defect-tracker/manage-defect"}
               >
                 Add
               </Button>

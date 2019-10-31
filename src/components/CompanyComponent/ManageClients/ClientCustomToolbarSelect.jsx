@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import EditIcon from "@material-ui/icons/Edit";
 import Fab from "@material-ui/core/Fab";
 import DeleteIcon from "@material-ui/icons/Delete";
+import ViewIcon from "@material-ui/icons/AspectRatio";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 
@@ -14,10 +15,23 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function DefectPriorityCustomToolbarSelect() {
+export default function CompanyCustomToolbarSelect() {
   const classes = useStyles();
   return (
     <div>
+      <Tooltip title={"View"}>
+        <IconButton className={classes.iconButton}>
+          <Fab
+            color="secondary"
+            aria-label="view"
+            className={classes.fab}
+            size="small"
+          >
+            <ViewIcon />
+          </Fab>
+        </IconButton>
+      </Tooltip>
+
       <Tooltip title={"Edit"}>
         <IconButton className={classes.iconButton}>
           <Fab

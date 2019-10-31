@@ -1,6 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,6 +20,26 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(5),
     margin: theme.spacing(3),
     padding: theme.spacing(5)
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    marginTop: theme.spacing(2),
+    width: "925px"
+  },
+  buttonUpload: {
+    marginRight: theme.spacing(3),
+    marginTop: theme.spacing(2),
+    marginLeft: theme.spacing(1),
+    width: "230px"
+  },
+  button: {
+    marginTop: theme.spacing(2),
+    marginLeft: theme.spacing(1),
+    width: "120px"
+  },
+  input: {
+    display: "none"
   }
 }));
 
@@ -30,48 +53,58 @@ export default function CompanyProfile() {
           Container: props => <Paper {...props} elevation={4} />
         }}
       >
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Company Name</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Company Name"
+        <form className={classes.container} autoComplete="off">
+          <Grid container>
+            <TextField
+              required
+              id="project-name"
+              label="Company Name"
+              className={classes.textField}
+              margin="normal"
+              variant="outlined"
             />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Company Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Company Email"
+            <TextField
+              required
+              id="project-name"
+              label="Company Email"
+              className={classes.textField}
+              margin="normal"
+              variant="outlined"
             />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Company Website</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Company Website"
+            <TextField
+              required
+              id="project-name"
+              label="Company Website"
+              className={classes.textField}
+              margin="normal"
+              variant="outlined"
             />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlFile1">Company Logo</label>
             <input
+              accept="image/*"
+              className={classes.input}
+              id="contained-button-file"
+              multiple
               type="file"
-              class="form-control-file"
-              id="exampleFormControlFile1"
             />
-          </div>
-          <button type="submit" class="btn btn-primary">
-            Save
-          </button>
+            <label htmlFor="contained-button-file">
+              <Button
+                variant="outlined"
+                component="span"
+                className={classes.buttonUpload}
+              >
+                Upload Company Logo
+              </Button>
+            </label>
+          </Grid>
+          <Grid container justify="flex-start">
+            <Button
+              className={classes.button}
+              variant="contained"
+              color="primary"
+            >
+              Save
+            </Button>
+          </Grid>
         </form>
       </Paper>
     </div>

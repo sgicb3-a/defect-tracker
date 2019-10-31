@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import "date-fns";
 import Button from "@material-ui/core/Button";
 import ColorPicker from "./ColorPicker";
 
@@ -28,17 +29,18 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AddDefectPriorityForm() {
+
+export default function EditSeverityForm() {
   const classes = useStyles();
 
   return (
     <div>
-      <form className={classes.container} autoComplete="off">
+           <form className={classes.container} autoComplete="off">
         <Grid container justify="space-between">
-          <TextField
+        <TextField
             required
             id="project-name"
-            label="Priority"
+            label="Severity"
             className={classes.textField}
             margin="normal"
             variant="outlined"

@@ -31,7 +31,7 @@ export default function QADashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 New Defects
               </div>
               <div className="card-body text-primary">
@@ -43,7 +43,7 @@ export default function QADashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 Opened Defects
               </div>
               <div className="card-body text-secondary">
@@ -55,7 +55,7 @@ export default function QADashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 Reopened Defects
               </div>
               <div className="card-body text-info">
@@ -67,7 +67,7 @@ export default function QADashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 High Priority Defects
               </div>
               <div className="card-body text-danger">
@@ -79,7 +79,7 @@ export default function QADashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 High Severity
               </div>
               <div className="card-body text-warning">
@@ -91,7 +91,7 @@ export default function QADashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 Fixed Defects
               </div>
               <div className="card-body text-success">

@@ -47,6 +47,14 @@ export default function AddLicenseForm() {
           />
           <TextField
             required
+            id="project-name"
+            label="License Cost"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            required
             id="project-desc"
             label="License Features"
             multiline

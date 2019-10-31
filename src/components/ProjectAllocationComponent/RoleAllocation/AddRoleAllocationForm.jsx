@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(theme => ({
@@ -26,6 +27,11 @@ export default function AddRoleAllocationForm() {
   React.useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth);
   }, []);
+  const [value, setValue] = React.useState("");
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
@@ -35,7 +41,15 @@ export default function AddRoleAllocationForm() {
             <InputLabel ref={inputLabel} htmlFor="defect-severity">
               Select Role
             </InputLabel>
-            <Select labelWidth={labelWidth}></Select>
+            <Select
+              labelWidth={labelWidth}
+              value={value}
+              onChange={handleChange}
+            >
+              <MenuItem value="Senior SE">Senior SE</MenuItem>
+              <MenuItem value="Tech Lead">Tech Lead</MenuItem>
+              <MenuItem value="QA Lead">QA Lead</MenuItem>
+            </Select>
           </FormControl>
         </Grid>
       </form>

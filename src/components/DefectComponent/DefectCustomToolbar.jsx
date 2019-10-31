@@ -23,7 +23,7 @@ export default function DefectCustomToolbar() {
         <IconButton
           className={classes.iconButton}
           component={Link}
-          to={"/manage-defect/add-defect"}
+          to={"/defect-tracker/manage-defect/add-defect"}
         >
           <Fab
             color="primary"

@@ -9,6 +9,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -37,11 +38,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignIn() {
   const classes = useStyles();
-
-  const enterApp = () => {
-    window.location.href = "http://localhost:3000/dashboard/company";
-    return null;
-  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -78,7 +74,8 @@ export default function SignIn() {
           />
           <Button
             //type="submit"
-            onClick={enterApp}
+            component={Link}
+            to={"/defect-tracker/dashboard/company"}
             fullWidth
             variant="contained"
             color="primary"
@@ -88,7 +85,11 @@ export default function SignIn() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Links href="/forgot-password" variant="body2">
+              <Links
+                component={Link}
+                to={"/defect-tracker/forgot-password"}
+                variant="body2"
+              >
                 Forgot password?
               </Links>
             </Grid>

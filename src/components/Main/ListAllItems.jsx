@@ -103,7 +103,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/dashboard/company"}
+              to={"/defect-tracker/dashboard/company"}
             >
               <ListItemText primary="Company" />
             </ListItem>
@@ -111,7 +111,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/dashboard/defect"}
+              to={"/defect-tracker/dashboard/defect"}
             >
               <ListItemText primary="Defect" />
             </ListItem>
@@ -119,7 +119,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/dashboard/developer"}
+              to={"/defect-tracker/dashboard/developer"}
             >
               <ListItemText primary="Developer" />
             </ListItem>
@@ -127,7 +127,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/dashboard/project-manager"}
+              to={"/defect-tracker/dashboard/project-manager"}
             >
               <ListItemText primary="Project Manager" />
             </ListItem>
@@ -135,7 +135,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/dashboard/qa"}
+              to={"/defect-tracker/dashboard/qa"}
             >
               <ListItemText primary="QA" />
             </ListItem>
@@ -143,7 +143,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/dashboard/product"}
+              to={"/defect-tracker/dashboard/product"}
             >
               <ListItemText primary="Product" />
             </ListItem>
@@ -163,7 +163,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/product-administration/manage-license"}
+              to={"/defect-tracker/product-administration/manage-license"}
             >
               <ListItemText primary="Manage License" />
             </ListItem>
@@ -171,7 +171,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/product-administration/manage-company"}
+              to={"/defect-tracker/product-administration/manage-company"}
             >
               <ListItemText primary="Manage Company" />
             </ListItem>
@@ -191,7 +191,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/company-administration/manage-employee"}
+              to={"/defect-tracker/company-administration/manage-employee"}
             >
               <ListItemText primary="Manage Employee" />
             </ListItem>
@@ -199,14 +199,14 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/company-administration/hr-allocation"}
+              to={"/defect-tracker/company-administration/hr-allocation"}
             >
               <ListItemText primary="HR Allocation" />
             </ListItem>
           </List>
         </Collapse>
 
-        <ListItem button component={Link} to={"/manage-project"}>
+        <ListItem button component={Link} to={"/defect-tracker/manage-project"}>
           <ListItemIcon>
             <ProjectIcon />
           </ListItemIcon>
@@ -226,7 +226,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/project-allocation/role-allocation"}
+              to={"/defect-tracker/project-allocation/role-allocation"}
             >
               <ListItemText primary="Role Allocation" />
             </ListItem>
@@ -234,7 +234,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/project-allocation/module-allocation"}
+              to={"/defect-tracker/project-allocation/module-allocation"}
             >
               <ListItemText primary="Module Allocation" />
             </ListItem>
@@ -254,7 +254,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/module/manage-module"}
+              to={"/defect-tracker/module/manage-module"}
             >
               <ListItemText primary="Manage Module" />
             </ListItem>
@@ -262,14 +262,14 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/module/manage-submodule"}
+              to={"/defect-tracker/module/manage-submodule"}
             >
               <ListItemText primary="Manage Submodule" />
             </ListItem>
           </List>
         </Collapse>
 
-        <ListItem button component={Link} to={"/manage-defect"}>
+        <ListItem button component={Link} to={"/defect-tracker/manage-defect"}>
           <ListItemIcon>
             <DefectIcon />
           </ListItemIcon>
@@ -288,7 +288,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/settings/company-profile"}
+              to={"/defect-tracker/settings/company-profile"}
             >
               <ListItemText primary="Company Profile" />
             </ListItem>
@@ -306,7 +306,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/defect-configuration/priority"}
+                  to={"/defect-tracker/settings/defect-configuration/priority"}
                 >
                   <ListItemText primary="Priority" />
                 </ListItem>
@@ -314,7 +314,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/defect-configuration/severity"}
+                  to={"/defect-tracker/settings/defect-configuration/severity"}
                 >
                   <ListItemText primary="Severity" />
                 </ListItem>
@@ -322,7 +322,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/defect-configuration/type"}
+                  to={"/defect-tracker/settings/defect-configuration/type"}
                 >
                   <ListItemText primary="Type" />
                 </ListItem>
@@ -330,7 +330,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/defect-configuration/status"}
+                  to={"/defect-tracker/settings/defect-configuration/status"}
                 >
                   <ListItemText primary="Status" />
                 </ListItem>
@@ -350,7 +350,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/privileges/company"}
+                  to={"/defect-tracker/settings/privileges/company"}
                 >
                   <ListItemText primary="Company" />
                 </ListItem>
@@ -358,7 +358,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/privileges/project"}
+                  to={"/defect-tracker/settings/privileges/project"}
                 >
                   <ListItemText primary="Project" />
                 </ListItem>
@@ -366,7 +366,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/privileges/qa-lead"}
+                  to={"/defect-tracker/settings/privileges/qa-lead"}
                 >
                   <ListItemText primary="QA Lead" />
                 </ListItem>
@@ -374,7 +374,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/privileges/tech-lead"}
+                  to={"/defect-tracker/settings/privileges/tech-lead"}
                 >
                   <ListItemText primary="Tech Lead" />
                 </ListItem>
@@ -384,7 +384,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/settings/audit-log"}
+              to={"/defect-tracker/settings/audit-log"}
             >
               <ListItemText primary="Audit Log" />
             </ListItem>
@@ -402,7 +402,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/workflow/defect-role"}
+                  to={"/defect-tracker/settings/workflow/defect-role"}
                 >
                   <ListItemText primary="Defect Role" />
                 </ListItem>
@@ -410,7 +410,7 @@ export default function ListAllItems() {
                   button
                   className={classes.dualNested}
                   component={Link}
-                  to={"/settings/workflow/defect-status"}
+                  to={"/defect-tracker/settings/workflow/defect-status"}
                 >
                   <ListItemText primary="Defect Status" />
                 </ListItem>

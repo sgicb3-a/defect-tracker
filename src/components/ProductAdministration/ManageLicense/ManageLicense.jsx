@@ -44,6 +44,14 @@ const columns = [
     }
   },
   {
+    name: "LicenseCost",
+    label: "License Cost",
+    options: {
+      filter: true,
+      sort: false
+    }
+  },
+  {
     name: "LicenseFeatures",
     label: "License Features",
     options: {
@@ -58,6 +66,7 @@ const data = [
     LicenseId: "L-101",
     LicenseName: "Platinum",
     LicenseValidity: "5 Years",
+    LicenseCost: "Rs.550,000/-",
     LicenseFeatures: "All Features"
   }
 ];

@@ -36,8 +36,8 @@ const columns = [
     }
   },
   {
-    name: "ModuleId",
-    label: "Module Id",
+    name: "ModuleName",
+    label: "Module Name",
     options: {
       filter: true,
       sort: true
@@ -57,7 +57,7 @@ const data = [
   {
     SubModuleId: "SM-001",
     SubModuleName: "Project Menu",
-    ModuleId: "M-001",
+    ModuleName: "Left Drawer",
     ProjectName: "CMS"
   }
 ];

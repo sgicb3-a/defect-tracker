@@ -29,7 +29,7 @@ export default function ProductDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5">Clients</div>
+              <div className="card-header h5 text-secondary">Clients</div>
               <div className="card-body text-danger">
                 <h5 className="card-title h1">20</h5>
               </div>
@@ -39,7 +39,7 @@ export default function ProductDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5">Platinum</div>
+              <div className="card-header h5 text-secondary">Platinum</div>
               <div className="card-body text-success">
                 <h5 className="card-title h1">3</h5>
               </div>
@@ -49,7 +49,7 @@ export default function ProductDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5">Gold</div>
+              <div className="card-header h5 text-secondary">Gold</div>
               <div className="card-body text-info">
                 <h5 className="card-title h1">11</h5>
               </div>
@@ -59,7 +59,7 @@ export default function ProductDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5">Silver</div>
+              <div className="card-header h5 text-secondary">Silver</div>
               <div className="card-body text-warning">
                 <h5 className="card-title h1">4</h5>
               </div>
@@ -69,7 +69,7 @@ export default function ProductDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5">Bronze</div>
+              <div className="card-header h5 text-secondary">Bronze</div>
               <div className="card-body text-secondary">
                 <h5 className="card-title h1">2</h5>
               </div>

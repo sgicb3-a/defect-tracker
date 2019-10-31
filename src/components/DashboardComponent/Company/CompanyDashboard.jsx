@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
     marginTop: theme.spacing(3)
+  },
+  custom: {
+    backgroundColor: "#000000"
   }
 }));
 
@@ -31,7 +34,7 @@ export default function CompanyDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 Projects
               </div>
               <div className="card-body text-danger">
@@ -43,7 +46,7 @@ export default function CompanyDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 Project Managers
               </div>
               <div className="card-body text-success">
@@ -55,7 +58,7 @@ export default function CompanyDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 QA Leads
               </div>
               <div className="card-body text-info">
@@ -67,7 +70,7 @@ export default function CompanyDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 Tech Leads
               </div>
               <div className="card-body text-warning">
@@ -79,7 +82,7 @@ export default function CompanyDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 Software Engineers
               </div>
               <div className="card-body text-secondary">
@@ -91,7 +94,7 @@ export default function CompanyDashboard() {
         <Grid item xs>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5" style={styleHead}>
+              <div className="card-header h5 text-secondary" style={styleHead}>
                 QA Engineers
               </div>
               <div className="card-body text-primary">

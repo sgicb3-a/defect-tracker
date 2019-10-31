@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
@@ -54,9 +55,14 @@ export default function AddCompanyForm() {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2019-10-24T21:11:54")
   );
+  const [value, setValue] = React.useState("");
 
   const handleDateChange = date => {
     setSelectedDate(date);
+  };
+
+  const handleChange = event => {
+    setValue(event.target.value);
   };
 
   return (
@@ -99,13 +105,31 @@ export default function AddCompanyForm() {
             <InputLabel ref={inputLabel} htmlFor="defect-severity">
               License Type
             </InputLabel>
-            <Select labelWidth={labelWidth}></Select>
+            <Select
+              labelWidth={labelWidth}
+              value={value}
+              onChange={handleChange}
+            >
+              <MenuItem value="Platinum">Platinum</MenuItem>
+              <MenuItem value="Gold">Gold</MenuItem>
+              <MenuItem value="Silver">Silver</MenuItem>
+              <MenuItem value="Bronze">Bronze</MenuItem>
+            </Select>
           </FormControl>
           <FormControl required className={classes.formControl}>
             <InputLabel ref={inputLabel} htmlFor="defect-severity">
               License Period
             </InputLabel>
-            <Select labelWidth={labelWidth}></Select>
+            <Select
+              labelWidth={labelWidth}
+              value={value}
+              onChange={handleChange}
+            >
+              <MenuItem value="5 Years">5 years</MenuItem>
+              <MenuItem value="3 Years">3 Years</MenuItem>
+              <MenuItem value="2 Years">2 Years</MenuItem>
+              <MenuItem value="1 Year">1 year</MenuItem>
+            </Select>
           </FormControl>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker

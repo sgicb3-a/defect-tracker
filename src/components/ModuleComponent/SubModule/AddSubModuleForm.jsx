@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,6 +34,11 @@ export default function AddSubModuleForm() {
   React.useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth);
   }, []);
+  const [value, setValue] = React.useState("");
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
@@ -40,9 +46,17 @@ export default function AddSubModuleForm() {
         <Grid container justify="space-between">
           <FormControl required className={classes.formControl}>
             <InputLabel ref={inputLabel} htmlFor="defect-severity">
-              Module Id
+              Module Name
             </InputLabel>
-            <Select labelWidth={labelWidth}></Select>
+            <Select
+              labelWidth={labelWidth}
+              value={value}
+              onChange={handleChange}
+            >
+              <MenuItem value="Left Drawer">Left Drawer</MenuItem>
+              <MenuItem value="Header">Header</MenuItem>
+              <MenuItem value="Footer">Footer</MenuItem>
+            </Select>
           </FormControl>
           <TextField
             required

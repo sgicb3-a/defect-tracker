@@ -38,7 +38,7 @@ export default function RouteDetails() {
   return (
     <div>
       <Switch>
-        <Route exact path="/">
+        <Route path="/defect-tracker/dashboard/company">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -50,19 +50,7 @@ export default function RouteDetails() {
           <CompanyDashboard />
         </Route>
 
-        <Route path="/dashboard/company">
-          <Breadcrumbs
-            separator={<NavigateNextIcon fontSize="small" />}
-            aria-label="breadcrumb"
-          >
-            <Links color="inherit">Home</Links>
-            <Links color="inherit">Dashboard</Links>
-            <Typography color="textPrimary">Company</Typography>
-          </Breadcrumbs>
-          <CompanyDashboard />
-        </Route>
-
-        <Route path="/dashboard/defect">
+        <Route path="/defect-tracker/dashboard/defect">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -74,7 +62,7 @@ export default function RouteDetails() {
           <DefectDashboard />
         </Route>
 
-        <Route path="/dashboard/developer">
+        <Route path="/defect-tracker/dashboard/developer">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -86,7 +74,7 @@ export default function RouteDetails() {
           <DeveloperDashboard />
         </Route>
 
-        <Route path="/dashboard/project-manager">
+        <Route path="/defect-tracker/dashboard/project-manager">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -98,7 +86,7 @@ export default function RouteDetails() {
           <ProjectManagerDashboard />
         </Route>
 
-        <Route path="/dashboard/qa">
+        <Route path="/defect-tracker/dashboard/qa">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -110,7 +98,7 @@ export default function RouteDetails() {
           <QADashboard />
         </Route>
 
-        <Route path="/dashboard/product">
+        <Route path="/defect-tracker/dashboard/product">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -122,7 +110,7 @@ export default function RouteDetails() {
           <ProductDashboard />
         </Route>
 
-        <Route path="/product-administration/manage-license">
+        <Route path="/defect-tracker/product-administration/manage-license">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -134,7 +122,7 @@ export default function RouteDetails() {
           <ManageLicense />
         </Route>
 
-        <Route path="/product-administration/manage-company">
+        <Route path="/defect-tracker/product-administration/manage-company">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -146,7 +134,7 @@ export default function RouteDetails() {
           <ManageCompany />
         </Route>
 
-        <Route path="/company-administration/manage-employee">
+        <Route path="/defect-tracker/company-administration/manage-employee">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -158,7 +146,7 @@ export default function RouteDetails() {
           <ManageEmployee />
         </Route>
 
-        <Route path="/company-administration/hr-allocation">
+        <Route path="/defect-tracker/company-administration/hr-allocation">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -170,7 +158,7 @@ export default function RouteDetails() {
           <HRAllocation />
         </Route>
 
-        <Route path="/manage-project">
+        <Route path="/defect-tracker/manage-project">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -181,7 +169,7 @@ export default function RouteDetails() {
           <ManageProject />
         </Route>
 
-        <Route path="/project-allocation/role-allocation">
+        <Route path="/defect-tracker/project-allocation/role-allocation">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -193,7 +181,7 @@ export default function RouteDetails() {
           <RoleAllocation />
         </Route>
 
-        <Route path="/project-allocation/module-allocation">
+        <Route path="/defect-tracker/project-allocation/module-allocation">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -205,7 +193,7 @@ export default function RouteDetails() {
           <ModuleAllocation />
         </Route>
 
-        <Route path="/module/manage-module">
+        <Route path="/defect-tracker/module/manage-module">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -217,7 +205,7 @@ export default function RouteDetails() {
           <ManageModule />
         </Route>
 
-        <Route path="/module/manage-submodule">
+        <Route path="/defect-tracker/module/manage-submodule">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -229,7 +217,7 @@ export default function RouteDetails() {
           <ManageSubmodule />
         </Route>
 
-        <Route exact path="/manage-defect">
+        <Route exact path="/defect-tracker/manage-defect">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -240,7 +228,7 @@ export default function RouteDetails() {
           <ManageDefect />
         </Route>
 
-        <Route path="/manage-defect/add-defect">
+        <Route path="/defect-tracker/manage-defect/add-defect">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -252,7 +240,7 @@ export default function RouteDetails() {
           <AddDefectForm />
         </Route>
 
-        <Route path="/settings/company-profile">
+        <Route path="/defect-tracker/settings/company-profile">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -264,7 +252,7 @@ export default function RouteDetails() {
           <CompanyProfile />
         </Route>
 
-        <Route path="/settings/defect-configuration/priority">
+        <Route path="/defect-tracker/settings/defect-configuration/priority">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -277,7 +265,7 @@ export default function RouteDetails() {
           <DefectPriority />
         </Route>
 
-        <Route path="/settings/defect-configuration/severity">
+        <Route path="/defect-tracker/settings/defect-configuration/severity">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -290,7 +278,7 @@ export default function RouteDetails() {
           <DefectSeverity />
         </Route>
 
-        <Route path="/settings/defect-configuration/type">
+        <Route path="/defect-tracker/settings/defect-configuration/type">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -303,7 +291,7 @@ export default function RouteDetails() {
           <DefectType />
         </Route>
 
-        <Route path="/settings/defect-configuration/status">
+        <Route path="/defect-tracker/settings/defect-configuration/status">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -316,7 +304,7 @@ export default function RouteDetails() {
           <DefectStatus />
         </Route>
 
-        <Route path="/settings/privileges/company">
+        <Route path="/defect-tracker/settings/privileges/company">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -329,7 +317,7 @@ export default function RouteDetails() {
           <CompanyPrivileges />
         </Route>
 
-        <Route path="/settings/privileges/project">
+        <Route path="/defect-tracker/settings/privileges/project">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -342,7 +330,7 @@ export default function RouteDetails() {
           <ProjectPrivileges />
         </Route>
 
-        <Route path="/settings/privileges/qa-lead">
+        <Route path="/defect-tracker/settings/privileges/qa-lead">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -355,7 +343,7 @@ export default function RouteDetails() {
           <QALeadPrivileges />
         </Route>
 
-        <Route path="/settings/privileges/tech-lead">
+        <Route path="/defect-tracker/settings/privileges/tech-lead">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -368,7 +356,7 @@ export default function RouteDetails() {
           <TechLeadPriviles />
         </Route>
 
-        <Route path="/settings/audit-log">
+        <Route path="/defect-tracker/settings/audit-log">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -380,7 +368,7 @@ export default function RouteDetails() {
           <AuditLog />
         </Route>
 
-        <Route path="/settings/workflow/defect-role">
+        <Route path="/defect-tracker/settings/workflow/defect-role">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
@@ -393,7 +381,7 @@ export default function RouteDetails() {
           <DefectRoleFlow />
         </Route>
 
-        <Route path="/settings/workflow/defect-status">
+        <Route path="/defect-tracker/settings/workflow/defect-status">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"

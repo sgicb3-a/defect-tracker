@@ -6,6 +6,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     marginRight: theme.spacing(3),
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(2.7),
     width: "230px"
   },
   input: {
@@ -42,6 +43,11 @@ export default function AddEmployeeForm() {
   React.useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth);
   }, []);
+  const [value, setValue] = React.useState("");
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
@@ -63,11 +69,38 @@ export default function AddEmployeeForm() {
             margin="normal"
             variant="outlined"
           />
+          <TextField
+            required
+            id="project-desc"
+            label="Username"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="project-desc"
+            label="Password"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            type="password"
+          />
           <FormControl required className={classes.formControl}>
             <InputLabel ref={inputLabel} htmlFor="defect-severity">
               Designation
             </InputLabel>
-            <Select labelWidth={labelWidth}></Select>
+            <Select
+              labelWidth={labelWidth}
+              value={value}
+              onChange={handleChange}
+            >
+              <MenuItem value="Developer">Developer</MenuItem>
+              <MenuItem value="QA">QA</MenuItem>
+              <MenuItem value="Tech Lead">Tech Lead</MenuItem>
+              <MenuItem value="QA Lead">QA Lead</MenuItem>
+              <MenuItem value="Project Manager">Project Manager</MenuItem>
+            </Select>
           </FormControl>
           <input
             accept="image/*"

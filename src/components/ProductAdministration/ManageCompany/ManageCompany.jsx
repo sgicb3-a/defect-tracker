@@ -20,14 +20,6 @@ const useStyles = makeStyles(theme => ({
 
 const columns = [
   {
-    name: "RegistrationId",
-    label: "Registration Id",
-    options: {
-      filter: true,
-      sort: true
-    }
-  },
-  {
     name: "CompanyName",
     label: "Company Name",
     options: {
@@ -41,6 +33,14 @@ const columns = [
     options: {
       filter: true,
       sort: false
+    }
+  },
+  {
+    name: "RegistrationId",
+    label: "Registration Id",
+    options: {
+      filter: true,
+      sort: true
     }
   },
   {
@@ -63,9 +63,9 @@ const columns = [
 
 const data = [
   {
-    RegistrationId: "LK-254",
     CompanyName: "Samuel Gnanam IT Centre",
     Abbreviation: "SGIC",
+    RegistrationId: "LK-254",
     LicensePeriod: "2 Years",
     ITAdmin: "Thiru"
   }

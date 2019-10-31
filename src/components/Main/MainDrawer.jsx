@@ -25,6 +25,7 @@ import RouteDetails from "./RouteDetails";
 import { BrowserRouter as Router } from "react-router-dom";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Tooltip from "@material-ui/core/Tooltip";
+import Brightness6Icon from "@material-ui/icons/Brightness6";
 
 const drawerWidth = 240;
 
@@ -144,7 +145,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function MainDrawer() {
+export default function MainDrawer({ onToggleDark }) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
@@ -212,7 +213,7 @@ export default function MainDrawer() {
   };
 
   const exitApp = () => {
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "https://sgicb3-a.github.io/defect-tracker/";
     return null;
   };
 
@@ -254,6 +255,17 @@ export default function MainDrawer() {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
+              <Tooltip title={"Switch Dark/Light Theme"}>
+                <IconButton
+                  aria-label="dark"
+                  color="inherit"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={onToggleDark}
+                >
+                  <Brightness6Icon />
+                </IconButton>
+              </Tooltip>
               <Tooltip title={"Notifications"}>
                 <IconButton
                   aria-label="show 3 new notifications"
@@ -277,11 +289,13 @@ export default function MainDrawer() {
                   <ExitToAppIcon />
                 </IconButton>
               </Tooltip>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://material-ui.com/static/images/avatar/1.jpg"
-                className={classes.avatar}
-              />
+              <Tooltip title={"Remy Sharp"}>
+                <Avatar
+                  alt="Remy Sharp"
+                  src="https://material-ui.com/static/images/avatar/1.jpg"
+                  className={classes.avatar}
+                />
+              </Tooltip>
             </div>
           </Toolbar>
         </AppBar>

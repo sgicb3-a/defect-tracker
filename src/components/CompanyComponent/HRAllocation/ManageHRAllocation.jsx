@@ -6,6 +6,7 @@ import HRAllocationCustomToolbarSelect from "./HRAllocationCustomToolbarSelect";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(theme => ({
@@ -17,7 +18,8 @@ const useStyles = makeStyles(theme => ({
   container: {
     marginTop: theme.spacing(1),
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
+    textAlign: "left"
   },
   formControl: {
     marginLeft: theme.spacing(1),
@@ -87,6 +89,11 @@ const options = {
 
 export default function ManageHRAllocation() {
   const classes = useStyles();
+  const [value, setValue] = React.useState("");
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
@@ -94,7 +101,11 @@ export default function ManageHRAllocation() {
         <Grid container justify="flex-start">
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor="defect-severity">Project</InputLabel>
-            <Select></Select>
+            <Select value={value} onChange={handleChange}>
+              <MenuItem value="CMS">CMS</MenuItem>
+              <MenuItem value="LMS">LMS</MenuItem>
+              <MenuItem value="SIS">SIS</MenuItem>
+            </Select>
           </FormControl>
         </Grid>
         <MUIDataTable data={data} columns={columns} options={options} />

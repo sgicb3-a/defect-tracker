@@ -6,8 +6,8 @@ const data = {
   datasets: [
     {
       data: [3, 11, 4, 2],
-      backgroundColor: ["#e5e4e2", "#d4af37", "#aaa9ad", "#cd7f32"],
-      hoverBackgroundColor: ["#e5e4e2", "#d4af37", "#aaa9ad", "#cd7f32"]
+      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#20c997"],
+      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#20c997"]
     }
   ]
 };

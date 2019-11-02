@@ -4,7 +4,8 @@ import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
 import EmployeeCustomToolbar from "./EmployeeCustomToolbar";
 import EmployeeCustomToolbarSelect from "./EmployeeCustomToolbarSelect";
-import Avatar from "@material-ui/core/Avatar";
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,14 +38,6 @@ const columns = [
     }
   },
   {
-    name: "Username",
-    label: "Username",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
     name: "Designation",
     label: "Designation",
     options: {
@@ -59,30 +52,27 @@ const columns = [
       filter: true,
       sort: false
     }
-  },
-  {
-    name: "Photo",
-    label: "Photo",
-    options: {
-      filter: true,
-      sort: false
-    }
   }
 ];
 
 const data = [
   {
     EmployeeId: "U-25487",
-    EmployeeName: "Bals",
-    Username: "Balasankar",
+    EmployeeName: "Bala",
+    Designation: "Project Manager",
+    EmailId: "bals@bals.com"
+  },
+  {
+    EmployeeId: "U-25487",
+    EmployeeName: "Vino",
+    Designation: "QA Developer",
+    EmailId: "bals@bals.com"
+  },
+  {
+    EmployeeId: "U-25487",
+    EmployeeName: "Anns",
     Designation: "Developer",
-    EmailId: "bals@bals.com",
-    Photo: (
-      <Avatar
-        alt="Remy Sharp"
-        src="https://material-ui.com/static/images/avatar/1.jpg"
-      />
-    )
+    EmailId: "bals@bals.com"
   }
 ];
 
@@ -99,7 +89,8 @@ const options = {
 };
 
 export default function ManageEmployee() {
-  const classes = useStyles();
+  
+const classes = useStyles();
 
   return (
     <div>

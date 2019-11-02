@@ -4,14 +4,15 @@ import EditIcon from "@material-ui/icons/Edit";
 import Fab from "@material-ui/core/Fab";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ViewIcon from "@material-ui/icons/AspectRatio";
-import IconButton from "@material-ui/core/IconButton";
-import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     marginTop: theme.spacing(3),
     overflowX: "auto"
+  },
+  fab: {
+    margin: theme.spacing(1)
   }
 }));
 
@@ -19,44 +20,30 @@ export default function EmployeeCustomToolbarSelect() {
   const classes = useStyles();
   return (
     <div>
-      <Tooltip title={"View"}>
-        <IconButton className={classes.iconButton}>
-          <Fab
-            color="secondary"
-            aria-label="view"
-            className={classes.fab}
-            size="small"
-          >
-            <ViewIcon />
-          </Fab>
-        </IconButton>
-      </Tooltip>
-
-      <Tooltip title={"Edit"}>
-        <IconButton className={classes.iconButton}>
-          <Fab
-            color="secondary"
-            aria-label="edit"
-            className={classes.fab}
-            size="small"
-          >
-            <EditIcon />
-          </Fab>
-        </IconButton>
-      </Tooltip>
-
-      <Tooltip title={"Delete"}>
-        <IconButton className={classes.iconButton}>
-          <Fab
-            color="default"
-            aria-label="delete"
-            className={classes.fab}
-            size="small"
-          >
-            <DeleteIcon />
-          </Fab>
-        </IconButton>
-      </Tooltip>
+      <Fab
+        color="secondary"
+        aria-label="edit"
+        className={classes.fab}
+        size="small"
+      >
+        <ViewIcon />
+      </Fab>
+      <Fab
+        color="secondary"
+        aria-label="edit"
+        className={classes.fab}
+        size="small"
+      >
+        <EditIcon />
+      </Fab>
+      <Fab
+        color="default"
+        aria-label="delete"
+        className={classes.fab}
+        size="small"
+      >
+        <DeleteIcon />
+      </Fab>
     </div>
   );
 }

@@ -61,12 +61,13 @@ export default function EmployeeCustomToolbar() {
         </Tooltip>
       </label>
       <Tooltip title={"Add"}>
-        <IconButton className={classes.iconButton} onClick={handleAddOpen}>
+        <IconButton className={classes.iconButton}>
           <Fab
             color="primary"
             aria-label="add"
             className={classes.fab}
             size="small"
+            onClick={handleAddOpen}
           >
             <AddIcon />
           </Fab>

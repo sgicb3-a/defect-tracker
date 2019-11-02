@@ -1,57 +1,32 @@
-import React from "react";
-import "./App.css";
-import MainDrawer from "./components/Main/MainDrawer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from "./components/LoginComponent/SignIn";
-import ForgotPassword from "./components/LoginComponent/ForgotPassword";
-import ChangePassword from "./components/LoginComponent/ChangePassword";
-import { ThemeProvider } from "@material-ui/core/styles";
-import { createMuiTheme } from "@material-ui/core/styles";
+import React from 'react';
+import './App.css';
+import Login from "./Components/CompanyAdministrationComponent/Login"
+import Header from "./Components/CompanyAdministrationComponent/Header"
+
+import 'antd/dist/antd.css';
+import AddEmployee from "./Components/CompanyAdministrationComponent/AddEmployee"
+import CompanyEmployee from "./Components/CompanyAdministrationComponent/CompanyEmployee"
+
+
+import ManageEmployee from "./Components/CompaniAdmin/ManageEmployees/ManageEmployee"
+import AddEmployeeForm from "./Components/CompaniAdmin/ManageEmployees/AddEmployeeForm"
+import EmployeeCustom from "./Components/CompaniAdmin/ManageEmployees/EmployeeCustomToolbar"
+
+
+
 
 function App() {
-	const [dark, setDark] = React.useState(false);
-
-  const changeTheme = () => {
-    setDark(!dark);
-  };
-
-  const prefersDarkMode = dark;
-
-  const theme = React.useMemo(
-    () =>
-      createMuiTheme({
-        palette: {
-          type: prefersDarkMode ? "dark" : "light"
-        }
-      }),
-    [prefersDarkMode]
-  );
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
-		  <Route exact path="/defect-tracker">
-            <Login />
-          </Route>
-          <Route path="/defect-tracker/login">
-            <Login />
-          </Route>
-          <Route path="/defect-tracker/forgot-password">
-            <ForgotPassword />
-          </Route>
-          <Route path="/defect-tracker/change-password">
-            <ChangePassword />
-          </Route>
-          <Route path="/defect-tracker/dashboard/company">
-            <ThemeProvider theme={theme}>
-      <MainDrawer onToggleDark={changeTheme} />
-    </ThemeProvider>
-          </Route>
-        </Switch>
-      </Router>
+     {/* < Data /> */}
+
+     {/* < AddEmployee /> */}
+     {/* < index /> */}
+
+     < ManageEmployee /> 
+     {/* <EmployeeCustom /> */}
+
+
     </div>
   );
 }

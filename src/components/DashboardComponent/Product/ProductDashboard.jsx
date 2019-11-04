@@ -19,14 +19,17 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ProductDashboard() {
+export default function ProductDashboard({ isDark }) {
   const classes = useStyles();
-  const styleCard = { maxWidth: "18rem" };
+  const styleCard = {
+    maxWidth: "18rem",
+    backgroundColor: isDark ? "#424242" : null
+  };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary">Clients</div>
@@ -36,7 +39,17 @@ export default function ProductDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
+          <Paper className={classes.paper}>
+            <div className="card border-primary mb-3" style={styleCard}>
+              <div className="card-header h5 text-secondary">New Clients</div>
+              <div className="card-body text-primary">
+                <h5 className="card-title h1">2</h5>
+              </div>
+            </div>
+          </Paper>
+        </Grid>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary">Platinum</div>
@@ -46,7 +59,7 @@ export default function ProductDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary">Gold</div>
@@ -56,7 +69,7 @@ export default function ProductDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary">Silver</div>
@@ -66,7 +79,7 @@ export default function ProductDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary">Bronze</div>
@@ -79,12 +92,12 @@ export default function ProductDashboard() {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <DoughnutChart />
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <LineChart />
           </Paper>
@@ -92,7 +105,7 @@ export default function ProductDashboard() {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={12} lg={12}>
           <Paper className={classes.paper}>
             <ViewConsumers />
           </Paper>
@@ -100,12 +113,12 @@ export default function ProductDashboard() {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <BarChart />
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <PieChart />
           </Paper>

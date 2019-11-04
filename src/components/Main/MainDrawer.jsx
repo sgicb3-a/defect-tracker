@@ -26,6 +26,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Tooltip from "@material-ui/core/Tooltip";
 import Brightness6Icon from "@material-ui/icons/Brightness6";
+import MoreIcon from "@material-ui/icons/MoreVert";
 
 const drawerWidth = 240;
 
@@ -123,7 +124,17 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
     width: theme.spacing(7) + 1,
     [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9) + 1
+      width: theme.spacing(9) + 2 //Changed from 1
+    }
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3)
+  },
+  sectionMobile: {
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      display: "none"
     }
   },
   drawerPaper: {
@@ -136,29 +147,36 @@ const useStyles = makeStyles(theme => ({
     ...theme.mixins.toolbar,
     justifyContent: "flex-end"
   },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3)
-  },
   avatar: {
     margin: 5
   }
 }));
 
-export default function MainDrawer({ onToggleDark }) {
+export default function MainDrawer({ onToggleDark, isDark }) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
   };
 
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
   const handleMenuClose = () => {
     setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = event => {
+    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = "primary-search-account-menu";
@@ -200,6 +218,58 @@ export default function MainDrawer({ onToggleDark }) {
           onClick={handleMenuClose}
           color="default"
         />
+      </MenuItem>
+    </Menu>
+  );
+
+  const mobileMenuId = "primary-search-account-menu-mobile";
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem onClick={onToggleDark}>
+        <IconButton
+          aria-label="dark"
+          color="inherit"
+          aria-controls={menuId}
+          aria-haspopup="true"
+        >
+          <Brightness6Icon />
+        </IconButton>
+        <p>Dark Mode</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="show 3 new notifications"
+          color="inherit"
+          aria-controls={menuId}
+          aria-haspopup="true"
+        >
+          <Badge badgeContent={3} color="secondary">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="help" color="inherit">
+          <HelpIcon />
+        </IconButton>
+        <p>Help</p>
+      </MenuItem>
+      <MenuItem>
+        <Avatar
+          alt="Remy Sharp"
+          src="https://material-ui.com/static/images/avatar/1.jpg"
+          className={classes.avatar}
+        />
+        <p>User</p>
       </MenuItem>
     </Menu>
   );
@@ -297,6 +367,17 @@ export default function MainDrawer({ onToggleDark }) {
                 />
               </Tooltip>
             </div>
+            <div className={classes.sectionMobile}>
+              <IconButton
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -332,7 +413,8 @@ export default function MainDrawer({ onToggleDark }) {
         >
           <div className={classes.drawerHeader} />
           {renderMenu}
-          <RouteDetails />
+          {renderMobileMenu}
+          <RouteDetails isDark={isDark} />
         </main>
       </div>
     </Router>

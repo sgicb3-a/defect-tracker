@@ -34,7 +34,7 @@ import DefectRoleFlow from "../SettingsComponent/WorkFlow/DefectRoleFlow/DefectR
 import DefectStatusFlow from "../SettingsComponent/WorkFlow/DefectStatusFlow/DefectStatusFlow";
 import ManageClient from "../CompanyComponent/ManageClients/ManageClient";
 
-export default function RouteDetails() {
+export default function RouteDetails({ isDark }) {
   return (
     <div>
       <Switch>
@@ -47,7 +47,7 @@ export default function RouteDetails() {
             <Links color="inherit">Dashboard</Links>
             <Typography color="textPrimary">Company</Typography>
           </Breadcrumbs>
-          <CompanyDashboard />
+          <CompanyDashboard isDark={isDark} />
         </Route>
 
         <Route path="/defect-tracker/dashboard/developer">
@@ -59,7 +59,7 @@ export default function RouteDetails() {
             <Links color="inherit">Dashboard</Links>
             <Typography color="textPrimary">Developer</Typography>
           </Breadcrumbs>
-          <DeveloperDashboard />
+          <DeveloperDashboard isDark={isDark} />
         </Route>
 
         <Route path="/defect-tracker/dashboard/project-manager">
@@ -71,7 +71,7 @@ export default function RouteDetails() {
             <Links color="inherit">Dashboard</Links>
             <Typography color="textPrimary">Project-Manager</Typography>
           </Breadcrumbs>
-          <ProjectManagerDashboard />
+          <ProjectManagerDashboard isDark={isDark} />
         </Route>
 
         <Route path="/defect-tracker/dashboard/qa">
@@ -83,7 +83,7 @@ export default function RouteDetails() {
             <Links color="inherit">Dashboard</Links>
             <Typography color="textPrimary">QA</Typography>
           </Breadcrumbs>
-          <QADashboard />
+          <QADashboard isDark={isDark} />
         </Route>
 
         <Route path="/defect-tracker/dashboard/product">
@@ -95,7 +95,7 @@ export default function RouteDetails() {
             <Links color="inherit">Dashboard</Links>
             <Typography color="textPrimary">Product</Typography>
           </Breadcrumbs>
-          <ProductDashboard />
+          <ProductDashboard isDark={isDark} />
         </Route>
 
         <Route path="/defect-tracker/product-administration/manage-license">

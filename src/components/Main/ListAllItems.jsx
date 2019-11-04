@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
+import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import { Link } from "react-router-dom";
 import Collapse from "@material-ui/core/Collapse";
@@ -24,8 +25,11 @@ const useStyles = makeStyles(theme => ({
   dualNested: {
     paddingLeft: theme.spacing(6)
   },
-  itemIcon: {
-    minWidth: "30px"
+  customAvatar: {
+    width: "24px",
+    height: "24px",
+    fontSize: "12px",
+    backgroundColor: "#64b5f6"
   }
 }));
 
@@ -105,6 +109,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/dashboard/company"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>CO</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Company" />
             </ListItem>
             <ListItem
@@ -113,6 +120,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/dashboard/developer"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>DE</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Developer" />
             </ListItem>
             <ListItem
@@ -121,6 +131,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/dashboard/project-manager"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>PM</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Project Manager" />
             </ListItem>
             <ListItem
@@ -129,6 +142,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/dashboard/qa"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>QA</Avatar>
+              </ListItemIcon>
               <ListItemText primary="QA" />
             </ListItem>
             <ListItem
@@ -137,6 +153,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/dashboard/product"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>PR</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Product" />
             </ListItem>
           </List>
@@ -157,6 +176,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/product-administration/manage-license"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>ML</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Manage License" />
             </ListItem>
             <ListItem
@@ -165,6 +187,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/product-administration/manage-company"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>MC</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Manage Company" />
             </ListItem>
           </List>
@@ -185,6 +210,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/company-administration/manage-employee"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>ME</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Manage Employee" />
             </ListItem>
             <ListItem
@@ -193,6 +221,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/company-administration/manage-client"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>MC</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Manage Client" />
             </ListItem>
           </List>
@@ -220,6 +251,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/module/manage-module"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>MM</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Manage Module" />
             </ListItem>
             <ListItem
@@ -228,6 +262,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/module/manage-submodule"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>MS</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Manage Submodule" />
             </ListItem>
           </List>
@@ -248,6 +285,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/project-allocation/hr-allocation"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>HR</Avatar>
+              </ListItemIcon>
               <ListItemText primary="HR Allocation" />
             </ListItem>
             <ListItem
@@ -256,6 +296,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/project-allocation/role-allocation"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>RA</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Role Allocation" />
             </ListItem>
             <ListItem
@@ -264,6 +307,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/project-allocation/module-allocation"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>MA</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Module Allocation" />
             </ListItem>
           </List>
@@ -290,6 +336,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/settings/company-profile"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>CP</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Company Profile" />
             </ListItem>
             <ListItem
@@ -297,6 +346,9 @@ export default function ListAllItems() {
               className={classes.nested}
               onClick={handleDefectConfigurationClick}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>DC</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Defect Configuration" />
               {openDefectConfiguration ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
@@ -341,6 +393,9 @@ export default function ListAllItems() {
               className={classes.nested}
               onClick={handlePrivilegesClick}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>PR</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Privileges" />
               {openPrivileges ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
@@ -386,6 +441,9 @@ export default function ListAllItems() {
               component={Link}
               to={"/defect-tracker/settings/audit-log"}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>AL</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Audit Log" />
             </ListItem>
             <ListItem
@@ -393,6 +451,9 @@ export default function ListAllItems() {
               className={classes.nested}
               onClick={handleWorkflowClick}
             >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>WF</Avatar>
+              </ListItemIcon>
               <ListItemText primary="Workflow" />
               {openWorkflow ? <ExpandLess /> : <ExpandMore />}
             </ListItem>

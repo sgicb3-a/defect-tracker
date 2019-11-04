@@ -47,7 +47,7 @@ function App() {
           </Route>
           <Route path="/defect-tracker/dashboard/company">
             <ThemeProvider theme={theme}>
-      <MainDrawer onToggleDark={changeTheme} />
+      <MainDrawer onToggleDark={changeTheme} isDark={dark}/>
     </ThemeProvider>
           </Route>
         </Switch>

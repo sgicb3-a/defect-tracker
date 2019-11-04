@@ -104,6 +104,7 @@ const options = {
   filterType: "checkbox",
   selectableRows: "single",
   selectableRowsOnClick: true,
+  responsive: "scrollMaxHeight",
   customToolbar: () => {
     return <DefectSeverityCustomToolbar />;
   },

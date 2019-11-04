@@ -23,15 +23,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function CompanyDashboard() {
+export default function CompanyDashboard({ isDark }) {
   const classes = useStyles();
-  const styleCard = { height: "11rem" };
+  const styleCard = {
+    height: "11rem",
+    backgroundColor: isDark ? "#424242" : null
+  };
+
   const styleHead = { height: "5rem" };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary" style={styleHead}>
@@ -43,7 +47,7 @@ export default function CompanyDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary" style={styleHead}>
@@ -55,7 +59,7 @@ export default function CompanyDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary" style={styleHead}>
@@ -67,7 +71,7 @@ export default function CompanyDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary" style={styleHead}>
@@ -79,7 +83,7 @@ export default function CompanyDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary" style={styleHead}>
@@ -91,7 +95,7 @@ export default function CompanyDashboard() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
               <div className="card-header h5 text-secondary" style={styleHead}>
@@ -105,12 +109,12 @@ export default function CompanyDashboard() {
         </Grid>
       </Grid>
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <DoughnutChart />
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <LineChart />
           </Paper>
@@ -118,7 +122,7 @@ export default function CompanyDashboard() {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={12} lg={12}>
           <Paper className={classes.paper}>
             <ViewProjects />
           </Paper>
@@ -126,12 +130,12 @@ export default function CompanyDashboard() {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <BarChart />
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
             <PieChart />
           </Paper>

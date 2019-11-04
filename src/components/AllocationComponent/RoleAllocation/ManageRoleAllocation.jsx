@@ -70,6 +70,7 @@ const data = [
 const options = {
   filterType: "checkbox",
   selectableRowsOnClick: true,
+  responsive: "scrollMaxHeight",
   customToolbarSelect: () => {
     return <HRAllocationCustomToolbarSelect />;
   }

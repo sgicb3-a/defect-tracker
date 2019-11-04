@@ -92,7 +92,8 @@ const data = [
 
 const options = {
   filterType: "checkbox",
-  selectableRows: "none"
+  selectableRows: "none",
+  responsive: "scrollMaxHeight"
 };
 
 export default function ViewProjects() {

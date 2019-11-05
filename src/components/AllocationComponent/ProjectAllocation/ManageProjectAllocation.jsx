@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
-import HRAllocationCustomToolbarSelect from "./HRAllocationCustomToolbarSelect";
+import ProjectAllocationCustomToolbarSelect from "./ProjectAllocationCustomToolbarSelect";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -84,7 +84,7 @@ const options = {
   selectableRowsOnClick: true,
   responsive: "scrollMaxHeight",
   customToolbarSelect: () => {
-    return <HRAllocationCustomToolbarSelect />;
+    return <ProjectAllocationCustomToolbarSelect />;
   }
 };
 

@@ -12,7 +12,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
-import AddHRAllocationForm from "./AddHRAllocationForm";
+import AddProjectAllocationForm from "./AddProjectAllocationForm";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function HRAllocationCustomToolbarSelect() {
+export default function ProjectAllocationCustomToolbarSelect() {
   const classes = useStyles();
   const [openAdd, setOpenAdd] = React.useState(false);
   const [openDeallocate, setOpenDeallocate] = React.useState(false);
@@ -111,7 +111,7 @@ export default function HRAllocationCustomToolbarSelect() {
         <DialogTitle id="add-project-title">Allocate Employees</DialogTitle>
         <Divider />
         <DialogContent>
-          <AddHRAllocationForm />
+          <AddProjectAllocationForm />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleAddClose} color="primary">

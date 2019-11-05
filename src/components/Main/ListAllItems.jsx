@@ -283,18 +283,18 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/defect-tracker/project-allocation/hr-allocation"}
+              to={"/defect-tracker/allocation/project-allocation"}
             >
               <ListItemIcon>
-                <Avatar className={classes.customAvatar}>HR</Avatar>
+                <Avatar className={classes.customAvatar}>PA</Avatar>
               </ListItemIcon>
-              <ListItemText primary="HR Allocation" />
+              <ListItemText primary="Project Allocation" />
             </ListItem>
             <ListItem
               button
               className={classes.nested}
               component={Link}
-              to={"/defect-tracker/project-allocation/role-allocation"}
+              to={"/defect-tracker/allocation/role-allocation"}
             >
               <ListItemIcon>
                 <Avatar className={classes.customAvatar}>RA</Avatar>
@@ -305,7 +305,7 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/defect-tracker/project-allocation/module-allocation"}
+              to={"/defect-tracker/allocation/module-allocation"}
             >
               <ListItemIcon>
                 <Avatar className={classes.customAvatar}>MA</Avatar>

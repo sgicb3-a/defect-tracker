@@ -10,7 +10,7 @@ import ProjectManagerDashboard from "../DashboardComponent/ProjectManager/Projec
 import QADashboard from "../DashboardComponent/QA/QADashboard";
 import ManageCompany from "../ProductComponent/ManageCompany/ManageCompany";
 import ManageEmployee from "../CompanyComponent/ManageEmployees/ManageEmployee";
-import HRAllocation from "../AllocationComponent/HRAllocation/ManageHRAllocation";
+import ProjectAllocation from "../AllocationComponent/ProjectAllocation/ManageProjectAllocation";
 import ManageModule from "../ModuleComponent/ManageModule";
 import ManageSubmodule from "../ModuleComponent/SubModule/ManageSubModule";
 import RoleAllocation from "../AllocationComponent/RoleAllocation/ManageRoleAllocation";
@@ -182,37 +182,37 @@ export default function RouteDetails({ isDark }) {
           <ManageSubmodule />
         </Route>
 
-        <Route path="/defect-tracker/project-allocation/hr-allocation">
+        <Route path="/defect-tracker/allocation/project-allocation">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
           >
             <Links color="inherit">Home</Links>
-            <Links color="inherit">Project Allocation</Links>
-            <Typography color="textPrimary">HR Allocation</Typography>
+            <Links color="inherit">Allocation</Links>
+            <Typography color="textPrimary">Project Allocation</Typography>
           </Breadcrumbs>
-          <HRAllocation />
+          <ProjectAllocation />
         </Route>
 
-        <Route path="/defect-tracker/project-allocation/role-allocation">
+        <Route path="/defect-tracker/allocation/role-allocation">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
           >
             <Links color="inherit">Home</Links>
-            <Links color="inherit">Project Allocation</Links>
+            <Links color="inherit">Allocation</Links>
             <Typography color="textPrimary">Role Allocation</Typography>
           </Breadcrumbs>
           <RoleAllocation />
         </Route>
 
-        <Route path="/defect-tracker/project-allocation/module-allocation">
+        <Route path="/defect-tracker/allocation/module-allocation">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
           >
             <Links color="inherit">Home</Links>
-            <Links color="inherit">Project Allocation</Links>
+            <Links color="inherit">Allocation</Links>
             <Typography color="textPrimary">Module Allocation</Typography>
           </Breadcrumbs>
           <ModuleAllocation />

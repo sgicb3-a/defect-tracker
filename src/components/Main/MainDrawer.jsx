@@ -158,7 +158,7 @@ const useStyles = makeStyles(theme => ({
 export default function MainDrawer({ onToggleDark, isDark }) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 

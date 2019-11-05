@@ -77,7 +77,7 @@ export default function UserProfile() {
               disabled
               id="project-name"
               label="Employee Email"
-              value="Bals@bals.com"
+              value="bals@bals.com"
               className={classes.textField}
               margin="normal"
               variant="outlined"
@@ -93,7 +93,15 @@ export default function UserProfile() {
             />
             <TextField
               id="project-name"
-              label="Password"
+              label="Old Password"
+              className={classes.textField}
+              type="password"
+              margin="normal"
+              variant="outlined"
+            />
+            <TextField
+              id="project-name"
+              label="New Password"
               className={classes.textField}
               type="password"
               margin="normal"
@@ -120,7 +128,7 @@ export default function UserProfile() {
                 component="span"
                 className={classes.buttonUpload}
               >
-                Upload Profile Photo
+                Change Profile Photo
               </Button>
             </label>
           </Grid>

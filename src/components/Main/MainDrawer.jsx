@@ -149,6 +149,9 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: 5
+  },
+  img: {
+    marginRight: theme.spacing(5)
   }
 }));
 
@@ -395,6 +398,13 @@ export default function MainDrawer({ onToggleDark, isDark }) {
           open={open}
         >
           <div className={classes.drawerHeader}>
+            <img
+              className={classes.img}
+              src="https://cdn2.iconfinder.com/data/icons/security-pro-1/512/Bug_Fixing-01-512.png"
+              alt="Logo"
+              height="50"
+              width="50"
+            />
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "ltr" ? (
                 <ChevronLeftIcon />

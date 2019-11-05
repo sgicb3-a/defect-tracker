@@ -33,6 +33,7 @@ import CompanyProfile from "../SettingsComponent/CompanyProfile/CompanyProfile";
 import DefectRoleFlow from "../SettingsComponent/WorkFlow/DefectRoleFlow/DefectRoleFlow";
 import DefectStatusFlow from "../SettingsComponent/WorkFlow/DefectStatusFlow/DefectStatusFlow";
 import ManageClient from "../CompanyComponent/ManageClients/ManageClient";
+import UserProfile from "../SettingsComponent/UserProfile/UserProfile";
 
 export default function RouteDetails({ isDark }) {
   return (
@@ -250,6 +251,18 @@ export default function RouteDetails({ isDark }) {
             <Typography color="textPrimary">Company Profile</Typography>
           </Breadcrumbs>
           <CompanyProfile />
+        </Route>
+
+        <Route path="/defect-tracker/settings/user-profile">
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="small" />}
+            aria-label="breadcrumb"
+          >
+            <Links color="inherit">Home</Links>
+            <Links color="inherit">Settings</Links>
+            <Typography color="textPrimary">User Profile</Typography>
+          </Breadcrumbs>
+          <UserProfile />
         </Route>
 
         <Route path="/defect-tracker/settings/defect-configuration/priority">

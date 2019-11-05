@@ -28,10 +28,38 @@ const data = {
   ]
 };
 
-export default function LineChart() {
+export default function LineChart({ isDark }) {
   return (
     <div>
-      <Line data={data} />
+      <Line
+        data={data}
+        height={280}
+        options={{
+          maintainAspectRatio: false,
+          legend: {
+            labels: {
+              fontColor: isDark ? "white" : "black"
+            }
+          },
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                  fontColor: isDark ? "white" : "black"
+                }
+              }
+            ],
+            xAxes: [
+              {
+                ticks: {
+                  fontColor: isDark ? "white" : "black"
+                }
+              }
+            ]
+          }
+        }}
+      />
     </div>
   );
 }

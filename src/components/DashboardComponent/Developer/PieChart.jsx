@@ -12,10 +12,21 @@ const data = {
   ]
 };
 
-export default function PieChart() {
+export default function PieChart({ isDark }) {
   return (
     <div>
-      <Pie data={data} />
+      <Pie
+        data={data}
+        height={280}
+        options={{
+          maintainAspectRatio: false,
+          legend: {
+            labels: {
+              fontColor: isDark ? "white" : "black"
+            }
+          }
+        }}
+      />
     </div>
   );
 }

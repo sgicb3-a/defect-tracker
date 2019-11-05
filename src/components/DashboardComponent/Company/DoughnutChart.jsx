@@ -12,10 +12,21 @@ const data = {
   ]
 };
 
-export default function DoughnutChart() {
+export default function DoughnutChart({ isDark }) {
   return (
     <div>
-      <Doughnut data={data} />
+      <Doughnut
+        data={data}
+        height={280}
+        options={{
+          maintainAspectRatio: false,
+          legend: {
+            labels: {
+              fontColor: isDark ? "white" : "black"
+            }
+          }
+        }}
+      />
     </div>
   );
 }

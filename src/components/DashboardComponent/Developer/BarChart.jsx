@@ -24,15 +24,36 @@ const data = {
   ]
 };
 
-export default function BarChart() {
+export default function BarChart({ isDark }) {
   return (
     <div>
       <Bar
         data={data}
-        width={100}
-        height={255}
+        height={280}
         options={{
-          maintainAspectRatio: false
+          maintainAspectRatio: false,
+          legend: {
+            labels: {
+              fontColor: isDark ? "white" : "black"
+            }
+          },
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                  fontColor: isDark ? "white" : "black"
+                }
+              }
+            ],
+            xAxes: [
+              {
+                ticks: {
+                  fontColor: isDark ? "white" : "black"
+                }
+              }
+            ]
+          }
         }}
       />
     </div>

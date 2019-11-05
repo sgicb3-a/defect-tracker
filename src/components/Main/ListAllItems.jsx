@@ -26,9 +26,9 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(6)
   },
   customAvatar: {
-    width: "24px",
-    height: "24px",
-    fontSize: "12px",
+    width: "22px",
+    height: "22px",
+    fontSize: "11px",
     backgroundColor: "#64b5f6"
   }
 }));
@@ -340,6 +340,17 @@ export default function ListAllItems() {
                 <Avatar className={classes.customAvatar}>CP</Avatar>
               </ListItemIcon>
               <ListItemText primary="Company Profile" />
+            </ListItem>
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to={"/defect-tracker/settings/user-profile"}
+            >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>UP</Avatar>
+              </ListItemIcon>
+              <ListItemText primary="User Profile" />
             </ListItem>
             <ListItem
               button

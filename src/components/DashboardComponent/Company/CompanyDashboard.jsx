@@ -16,10 +16,8 @@ const useStyles = makeStyles(theme => ({
   paper: {
     textAlign: "center",
     color: theme.palette.text.secondary,
-    marginTop: theme.spacing(3)
-  },
-  custom: {
-    backgroundColor: "#000000"
+    marginTop: theme.spacing(3),
+    position: "relative"
   }
 }));
 
@@ -38,7 +36,14 @@ export default function CompanyDashboard({ isDark }) {
         <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5 text-secondary" style={styleHead}>
+              <div
+                className={
+                  isDark
+                    ? "card-header h5 text-white"
+                    : "card-header h5 text-secondary"
+                }
+                style={styleHead}
+              >
                 Projects
               </div>
               <div className="card-body text-danger">
@@ -50,7 +55,14 @@ export default function CompanyDashboard({ isDark }) {
         <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5 text-secondary" style={styleHead}>
+              <div
+                className={
+                  isDark
+                    ? "card-header h5 text-white"
+                    : "card-header h5 text-secondary"
+                }
+                style={styleHead}
+              >
                 Project Managers
               </div>
               <div className="card-body text-success">
@@ -62,7 +74,14 @@ export default function CompanyDashboard({ isDark }) {
         <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5 text-secondary" style={styleHead}>
+              <div
+                className={
+                  isDark
+                    ? "card-header h5 text-white"
+                    : "card-header h5 text-secondary"
+                }
+                style={styleHead}
+              >
                 QA Leads
               </div>
               <div className="card-body text-info">
@@ -74,7 +93,14 @@ export default function CompanyDashboard({ isDark }) {
         <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5 text-secondary" style={styleHead}>
+              <div
+                className={
+                  isDark
+                    ? "card-header h5 text-white"
+                    : "card-header h5 text-secondary"
+                }
+                style={styleHead}
+              >
                 Tech Leads
               </div>
               <div className="card-body text-warning">
@@ -86,7 +112,14 @@ export default function CompanyDashboard({ isDark }) {
         <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5 text-secondary" style={styleHead}>
+              <div
+                className={
+                  isDark
+                    ? "card-header h5 text-white"
+                    : "card-header h5 text-secondary"
+                }
+                style={styleHead}
+              >
                 Software Engineers
               </div>
               <div className="card-body text-secondary">
@@ -98,7 +131,14 @@ export default function CompanyDashboard({ isDark }) {
         <Grid item xs={6} sm={4} md={4} lg={2}>
           <Paper className={classes.paper}>
             <div className="card border-primary mb-3" style={styleCard}>
-              <div className="card-header h5 text-secondary" style={styleHead}>
+              <div
+                className={
+                  isDark
+                    ? "card-header h5 text-white"
+                    : "card-header h5 text-secondary"
+                }
+                style={styleHead}
+              >
                 QA Engineers
               </div>
               <div className="card-body text-primary">
@@ -111,12 +151,12 @@ export default function CompanyDashboard({ isDark }) {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
-            <DoughnutChart />
+            <DoughnutChart isDark={isDark} />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
-            <LineChart />
+            <LineChart isDark={isDark} />
           </Paper>
         </Grid>
       </Grid>
@@ -132,12 +172,12 @@ export default function CompanyDashboard({ isDark }) {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
-            <BarChart />
+            <BarChart isDark={isDark} />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.paper}>
-            <PieChart />
+            <PieChart isDark={isDark} />
           </Paper>
         </Grid>
       </Grid>

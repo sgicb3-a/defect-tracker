@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function ListAllItems() {
   const classes = useStyles();
+  const [select, setSelect] = React.useState(null);
   const [openDashboard, setOpenDashboard] = React.useState(false);
   const [
     openProductAdminstration,
@@ -58,6 +59,10 @@ export default function ListAllItems() {
   );
   const [openPrivileges, setOpenPrivileges] = React.useState(false);
   const [openWorkflow, setOpenWorkflow] = React.useState(false);
+
+  const updateSelected = selectedIndex => {
+    setSelect(selectedIndex);
+  };
 
   const handleDashboardClick = () => {
     setOpenDashboard(!openDashboard);
@@ -114,6 +119,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(1)}
+              selected={select === 1}
               component={Link}
               to={"/defect-tracker/dashboard/company"}
             >
@@ -125,6 +132,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(2)}
+              selected={select === 2}
               component={Link}
               to={"/defect-tracker/dashboard/developer"}
             >
@@ -136,6 +145,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(3)}
+              selected={select === 3}
               component={Link}
               to={"/defect-tracker/dashboard/project-manager"}
             >
@@ -147,6 +158,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(4)}
+              selected={select === 4}
               component={Link}
               to={"/defect-tracker/dashboard/qa"}
             >
@@ -158,6 +171,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(5)}
+              selected={select === 5}
               component={Link}
               to={"/defect-tracker/dashboard/product"}
             >
@@ -181,6 +196,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(6)}
+              selected={select === 6}
               component={Link}
               to={"/defect-tracker/product-administration/manage-license"}
             >
@@ -192,6 +209,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(7)}
+              selected={select === 7}
               component={Link}
               to={"/defect-tracker/product-administration/manage-company"}
             >
@@ -215,6 +234,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(8)}
+              selected={select === 8}
               component={Link}
               to={"/defect-tracker/company-administration/manage-employee"}
             >
@@ -226,6 +247,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(9)}
+              selected={select === 9}
               component={Link}
               to={"/defect-tracker/company-administration/manage-client"}
             >
@@ -237,7 +260,13 @@ export default function ListAllItems() {
           </List>
         </Collapse>
 
-        <ListItem button component={Link} to={"/defect-tracker/manage-project"}>
+        <ListItem
+          button
+          component={Link}
+          to={"/defect-tracker/manage-project"}
+          onClick={() => updateSelected(10)}
+          selected={select === 10}
+        >
           <ListItemIcon>
             <ProjectIcon />
           </ListItemIcon>
@@ -256,6 +285,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(11)}
+              selected={select === 11}
               component={Link}
               to={"/defect-tracker/module/manage-module"}
             >
@@ -267,6 +298,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(12)}
+              selected={select === 12}
               component={Link}
               to={"/defect-tracker/module/manage-submodule"}
             >
@@ -290,6 +323,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(13)}
+              selected={select === 13}
               component={Link}
               to={"/defect-tracker/allocation/project-allocation"}
             >
@@ -301,6 +336,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(14)}
+              selected={select === 14}
               component={Link}
               to={"/defect-tracker/allocation/role-allocation"}
             >
@@ -312,6 +349,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(15)}
+              selected={select === 15}
               component={Link}
               to={"/defect-tracker/allocation/module-allocation"}
             >
@@ -323,7 +362,13 @@ export default function ListAllItems() {
           </List>
         </Collapse>
 
-        <ListItem button component={Link} to={"/defect-tracker/manage-defect"}>
+        <ListItem
+          button
+          onClick={() => updateSelected(16)}
+          selected={select === 16}
+          component={Link}
+          to={"/defect-tracker/manage-defect"}
+        >
           <ListItemIcon>
             <DefectIcon />
           </ListItemIcon>
@@ -341,6 +386,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(17)}
+              selected={select === 17}
               component={Link}
               to={"/defect-tracker/settings/user-profile"}
             >
@@ -353,6 +400,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(18)}
+              selected={select === 18}
               component={Link}
               to={"/defect-tracker/settings/license-configuration"}
             >
@@ -365,6 +414,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(19)}
+              selected={select === 19}
               component={Link}
               to={"/defect-tracker/settings/employee-configuration"}
             >
@@ -394,6 +445,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(21)}
+                  selected={select === 21}
                   component={Link}
                   to={"/defect-tracker/settings/project-configuration/role"}
                 >
@@ -402,6 +455,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(22)}
+                  selected={select === 22}
                   component={Link}
                   to={"/defect-tracker/settings/project-configuration/type"}
                 >
@@ -410,6 +465,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(23)}
+                  selected={select === 23}
                   component={Link}
                   to={"/defect-tracker/settings/project-configuration/status"}
                 >
@@ -433,6 +490,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(24)}
+                  selected={select === 24}
                   component={Link}
                   to={"/defect-tracker/settings/defect-configuration/priority"}
                 >
@@ -441,6 +500,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(25)}
+                  selected={select === 25}
                   component={Link}
                   to={"/defect-tracker/settings/defect-configuration/severity"}
                 >
@@ -449,6 +510,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(26)}
+                  selected={select === 26}
                   component={Link}
                   to={"/defect-tracker/settings/defect-configuration/type"}
                 >
@@ -457,6 +520,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(27)}
+                  selected={select === 27}
                   component={Link}
                   to={"/defect-tracker/settings/defect-configuration/status"}
                 >
@@ -480,6 +545,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(28)}
+                  selected={select === 28}
                   component={Link}
                   to={"/defect-tracker/settings/privileges/company"}
                 >
@@ -488,6 +555,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(29)}
+                  selected={select === 29}
                   component={Link}
                   to={"/defect-tracker/settings/privileges/project"}
                 >
@@ -496,6 +565,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(30)}
+                  selected={select === 30}
                   component={Link}
                   to={"/defect-tracker/settings/privileges/qa-lead"}
                 >
@@ -504,6 +575,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(31)}
+                  selected={select === 31}
                   component={Link}
                   to={"/defect-tracker/settings/privileges/tech-lead"}
                 >
@@ -514,6 +587,8 @@ export default function ListAllItems() {
             <ListItem
               button
               className={classes.nested}
+              onClick={() => updateSelected(32)}
+              selected={select === 32}
               component={Link}
               to={"/defect-tracker/settings/defect-log"}
             >
@@ -538,6 +613,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(33)}
+                  selected={select === 33}
                   component={Link}
                   to={"/defect-tracker/settings/workflow/defect-role"}
                 >
@@ -546,6 +623,8 @@ export default function ListAllItems() {
                 <ListItem
                   button
                   className={classes.dualNested}
+                  onClick={() => updateSelected(34)}
+                  selected={select === 34}
                   component={Link}
                   to={"/defect-tracker/settings/workflow/defect-status"}
                 >

@@ -47,8 +47,8 @@ const columns = [
     }
   },
   {
-    name: "Role",
-    label: "Role",
+    name: "Designation",
+    label: "Designation",
     options: {
       filter: true,
       sort: false
@@ -68,13 +68,13 @@ const data = [
   {
     EmployeeId: "E-100",
     Name: "Bals",
-    Role: "Developer",
+    Designation: "Developer",
     Availability: "30%"
   },
   {
     EmployeeId: "E-101",
     Name: "Sankar",
-    Role: "QA",
+    Designation: "QA",
     Availability: "70%"
   }
 ];

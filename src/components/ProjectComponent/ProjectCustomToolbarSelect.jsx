@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import EditIcon from "@material-ui/icons/Edit";
 import Fab from "@material-ui/core/Fab";
-import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ViewIcon from "@material-ui/icons/AspectRatio";
@@ -13,21 +12,25 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
-import EditProjectForm from "./EditProjectForm";
 import ViewProjectForm from "./ViewProjectForm";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     marginTop: theme.spacing(3),
     overflowX: "auto"
+  },
+  fab: {
+    marginTop: "4px",
+    marginBottom: "4px",
+    marginRight: theme.spacing(2)
   }
 }));
 
 export default function ProjectCustomToolbarSelect() {
   const classes = useStyles();
   const [openView, setOpenView] = React.useState(false);
-  const [openEdit, setOpenEdit] = React.useState(false);
   const [openDelete, setOpenDelete] = React.useState(false);
 
   const handleViewOpen = () => {
@@ -36,14 +39,6 @@ export default function ProjectCustomToolbarSelect() {
 
   const handleViewClose = () => {
     setOpenView(false);
-  };
-
-  const handleEditOpen = () => {
-    setOpenEdit(true);
-  };
-
-  const handleEditClose = () => {
-    setOpenEdit(false);
   };
 
   const handleDeleteOpen = () => {
@@ -57,16 +52,15 @@ export default function ProjectCustomToolbarSelect() {
   return (
     <div>
       <Tooltip title={"View"}>
-        <IconButton className={classes.iconButton} onClick={handleViewOpen}>
-          <Fab
-            color="secondary"
-            aria-label="view"
-            className={classes.fab}
-            size="small"
-          >
-            <ViewIcon />
-          </Fab>
-        </IconButton>
+        <Fab
+          color="secondary"
+          aria-label="view"
+          className={classes.fab}
+          size="small"
+          onClick={handleViewOpen}
+        >
+          <ViewIcon />
+        </Fab>
       </Tooltip>
 
       <Dialog
@@ -89,51 +83,28 @@ export default function ProjectCustomToolbarSelect() {
       </Dialog>
 
       <Tooltip title={"Edit"}>
-        <IconButton className={classes.iconButton} onClick={handleEditOpen}>
-          <Fab
-            color="secondary"
-            aria-label="edit"
-            className={classes.fab}
-            size="small"
-          >
-            <EditIcon />
-          </Fab>
-        </IconButton>
+        <Fab
+          color="secondary"
+          aria-label="edit"
+          className={classes.fab}
+          size="small"
+          component={Link}
+          to={"/defect-tracker/manage-project/edit-project"}
+        >
+          <EditIcon />
+        </Fab>
       </Tooltip>
 
-      <Dialog
-        open={openEdit}
-        onClose={handleEditClose}
-        aria-labelledby="edit-project-title"
-        fullWidth={true}
-        maxWidth={"sm"}
-      >
-        <DialogTitle id="edit-project-title">Edit Project</DialogTitle>
-        <Divider />
-        <DialogContent>
-          <EditProjectForm />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleEditClose} color="primary">
-            Cancel
-          </Button>
-          <Button variant="contained" onClick={handleEditClose} color="primary">
-            Update
-          </Button>
-        </DialogActions>
-      </Dialog>
-
       <Tooltip title={"Delete"}>
-        <IconButton className={classes.iconButton} onClick={handleDeleteOpen}>
-          <Fab
-            color="default"
-            aria-label="delete"
-            className={classes.fab}
-            size="small"
-          >
-            <DeleteIcon />
-          </Fab>
-        </IconButton>
+        <Fab
+          color="default"
+          aria-label="delete"
+          className={classes.fab}
+          size="small"
+          onClick={handleDeleteOpen}
+        >
+          <DeleteIcon />
+        </Fab>
       </Tooltip>
 
       <Dialog

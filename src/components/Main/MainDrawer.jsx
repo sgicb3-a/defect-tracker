@@ -17,7 +17,6 @@ import Menu from "@material-ui/core/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
-import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import InputBase from "@material-ui/core/InputBase";
 import ListAllItems from "./ListAllItems";
@@ -261,12 +260,6 @@ export default function MainDrawer({ onToggleDark, isDark }) {
         <p>Notifications</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="help" color="inherit">
-          <HelpIcon />
-        </IconButton>
-        <p>Help</p>
-      </MenuItem>
-      <MenuItem>
         <Avatar
           alt="Remy Sharp"
           src="https://material-ui.com/static/images/avatar/1.jpg"
@@ -350,11 +343,6 @@ export default function MainDrawer({ onToggleDark, isDark }) {
                   <Badge badgeContent={3} color="secondary">
                     <NotificationsIcon />
                   </Badge>
-                </IconButton>
-              </Tooltip>
-              <Tooltip title={"Help"}>
-                <IconButton aria-label="help" color="inherit">
-                  <HelpIcon />
                 </IconButton>
               </Tooltip>
               <Tooltip title={"Logout"}>

@@ -6,6 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,6 +25,11 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(3),
     margin: theme.spacing(1),
     width: "230px"
+  },
+  button: {
+    marginTop: theme.spacing(3),
+    marginLeft: theme.spacing(1),
+    width: "120px"
   }
 }));
 
@@ -45,10 +51,11 @@ export default function AddSubModuleForm() {
       <form className={classes.container} autoComplete="off">
         <Grid container justify="space-between">
           <FormControl required className={classes.formControl}>
-            <InputLabel ref={inputLabel} htmlFor="defect-severity">
+            <InputLabel ref={inputLabel} htmlFor="submodule-name">
               Module Name
             </InputLabel>
             <Select
+              id="submodule-name"
               labelWidth={labelWidth}
               value={value}
               onChange={handleChange}
@@ -60,12 +67,26 @@ export default function AddSubModuleForm() {
           </FormControl>
           <TextField
             required
-            id="project-name"
+            id="submodule-name"
             label="Sub Module Name"
             className={classes.textField}
             margin="normal"
             variant="outlined"
           />
+        </Grid>
+        <Grid container justify="flex-end">
+          <Button color="primary" size="large" className={classes.button}>
+            Close
+          </Button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            size="large"
+            className={classes.button}
+          >
+            Add
+          </Button>
         </Grid>
       </form>
     </div>

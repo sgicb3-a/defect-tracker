@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import RedoIcon from "@material-ui/icons/Redo";
 import UndoIcon from "@material-ui/icons/Undo";
-import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import Dialog from "@material-ui/core/Dialog";
 import Divider from "@material-ui/core/Divider";
@@ -19,6 +18,11 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     marginTop: theme.spacing(3),
     overflowX: "auto"
+  },
+  fab: {
+    marginTop: "4px",
+    marginBottom: "4px",
+    marginRight: theme.spacing(2)
   }
 }));
 
@@ -46,17 +50,15 @@ export default function ProjectAllocationCustomToolbarSelect() {
   return (
     <div>
       <Tooltip title={"Deallocate"}>
-        <IconButton className={classes.iconButton}>
-          <Fab
-            color="default"
-            aria-label="edit"
-            className={classes.fab}
-            size="small"
-            onClick={handleDeallocateOpen}
-          >
-            <UndoIcon />
-          </Fab>
-        </IconButton>
+        <Fab
+          color="default"
+          aria-label="edit"
+          className={classes.fab}
+          size="small"
+          onClick={handleDeallocateOpen}
+        >
+          <UndoIcon />
+        </Fab>
       </Tooltip>
 
       <Dialog
@@ -88,17 +90,15 @@ export default function ProjectAllocationCustomToolbarSelect() {
       </Dialog>
 
       <Tooltip title={"Allocate"}>
-        <IconButton className={classes.iconButton}>
-          <Fab
-            color="secondary"
-            aria-label="edit"
-            className={classes.fab}
-            size="small"
-            onClick={handleAddOpen}
-          >
-            <RedoIcon />
-          </Fab>
-        </IconButton>
+        <Fab
+          color="secondary"
+          aria-label="edit"
+          className={classes.fab}
+          size="small"
+          onClick={handleAddOpen}
+        >
+          <RedoIcon />
+        </Fab>
       </Tooltip>
 
       <Dialog

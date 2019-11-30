@@ -1,17 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
-import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import Fab from "@material-ui/core/Fab";
-import Dialog from "@material-ui/core/Dialog";
-import Divider from "@material-ui/core/Divider";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Button from "@material-ui/core/Button";
 import ImportIcon from "@material-ui/icons/VerticalAlignBottom";
-import AddEmployeeForm from "./AddEmployeeForm";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,20 +14,14 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     display: "none"
+  },
+  fab: {
+    marginLeft: theme.spacing(2)
   }
 }));
 
 export default function EmployeeCustomToolbar() {
   const classes = useStyles();
-  const [openAdd, setOpenAdd] = React.useState(false);
-
-  const handleAddOpen = () => {
-    setOpenAdd(true);
-  };
-
-  const handleAddClose = () => {
-    setOpenAdd(false);
-  };
 
   return (
     <React.Fragment>
@@ -47,52 +34,31 @@ export default function EmployeeCustomToolbar() {
       />
       <label htmlFor="contained-button-file">
         <Tooltip title={"Import"} component="span">
-          <IconButton className={classes.iconButton} component="span">
-            <Fab
-              color="secondary"
-              aria-label="add"
-              className={classes.fab}
-              size="small"
-              component="span"
-            >
-              <ImportIcon />
-            </Fab>
-          </IconButton>
-        </Tooltip>
-      </label>
-      <Tooltip title={"Add"}>
-        <IconButton className={classes.iconButton} onClick={handleAddOpen}>
           <Fab
-            color="primary"
+            color="secondary"
             aria-label="add"
             className={classes.fab}
             size="small"
+            component="span"
           >
-            <AddIcon />
+            <ImportIcon />
           </Fab>
-        </IconButton>
+        </Tooltip>
+      </label>
+      <Tooltip title={"Add"}>
+        <Fab
+          color="primary"
+          aria-label="add"
+          className={classes.fab}
+          size="small"
+          component={Link}
+          to={
+            "/defect-tracker/company-administration/manage-employee/add-employee"
+          }
+        >
+          <AddIcon />
+        </Fab>
       </Tooltip>
-      <Dialog
-        open={openAdd}
-        onClose={handleAddClose}
-        aria-labelledby="add-project-title"
-        fullWidth={true}
-        maxWidth={"sm"}
-      >
-        <DialogTitle id="add-project-title">Add Employee</DialogTitle>
-        <Divider />
-        <DialogContent>
-          <AddEmployeeForm />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleAddClose} color="primary">
-            Cancel
-          </Button>
-          <Button variant="contained" onClick={handleAddClose} color="primary">
-            Add
-          </Button>
-        </DialogActions>
-      </Dialog>
     </React.Fragment>
   );
 }

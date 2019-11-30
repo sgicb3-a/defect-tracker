@@ -50,7 +50,6 @@ const useStyles = makeStyles(theme => ({
   buttonUpload: {
     marginRight: theme.spacing(3),
     marginTop: theme.spacing(2.5),
-    marginBottom: theme.spacing(3),
     marginLeft: theme.spacing(1),
     width: "230px"
   },
@@ -91,17 +90,19 @@ export default function AddDefectForm() {
               <div>
                 <TextField
                   required
-                  id="project-name"
+                  id="defect-name"
                   label="Defect Name"
                   className={classes.textField}
                   margin="normal"
                   variant="outlined"
                 />
+
                 <FormControl required className={classes.formControl}>
-                  <InputLabel ref={inputLabel} htmlFor="def">
+                  <InputLabel ref={inputLabel} htmlFor="project-name">
                     Project
                   </InputLabel>
                   <Select
+                    id="project-name"
                     labelWidth={labelWidth}
                     value={value}
                     onChange={handleChange}
@@ -111,11 +112,16 @@ export default function AddDefectForm() {
                     <MenuItem value="SIS">SIS</MenuItem>
                   </Select>
                 </FormControl>
+
                 <FormControl required className={classes.formControl}>
-                  <InputLabel ref={inputLabel} htmlFor="def">
+                  <InputLabel ref={inputLabel} htmlFor="module-name">
                     Module
                   </InputLabel>
-                  <Select value={value} onChange={handleChange}>
+                  <Select
+                    id="module-name"
+                    value={value}
+                    onChange={handleChange}
+                  >
                     <MenuItem value="Left Drawer">Left Drawer</MenuItem>
                     <MenuItem value="Header">Header</MenuItem>
                     <MenuItem value="Footer">Footer</MenuItem>
@@ -124,28 +130,42 @@ export default function AddDefectForm() {
               </div>
               <div>
                 <FormControl required className={classes.formControl}>
-                  <InputLabel ref={inputLabel} htmlFor="def">
+                  <InputLabel ref={inputLabel} htmlFor="submodule-name">
                     Sub Module
                   </InputLabel>
-                  <Select value={value} onChange={handleChange}>
+                  <Select
+                    id="submodule-name"
+                    value={value}
+                    onChange={handleChange}
+                  >
                     <MenuItem value="Menu Item">Menu Item</MenuItem>
                     <MenuItem value="Search Bar">Search Bar</MenuItem>
                   </Select>
                 </FormControl>
+
                 <FormControl required className={classes.formControl}>
-                  <InputLabel ref={inputLabel} htmlFor="def">
+                  <InputLabel ref={inputLabel} htmlFor="defect-type">
                     Type
                   </InputLabel>
-                  <Select value={value} onChange={handleChange}>
+                  <Select
+                    id="defect-type"
+                    value={value}
+                    onChange={handleChange}
+                  >
                     <MenuItem value="UI">UI</MenuItem>
                     <MenuItem value="Function">Function</MenuItem>
                   </Select>
                 </FormControl>
+
                 <FormControl required className={classes.formControl}>
-                  <InputLabel ref={inputLabel} htmlFor="def">
+                  <InputLabel ref={inputLabel} htmlFor="defect-severity">
                     Severity
                   </InputLabel>
-                  <Select value={value} onChange={handleChange}>
+                  <Select
+                    id="defect-severity"
+                    value={value}
+                    onChange={handleChange}
+                  >
                     <MenuItem value="High">High</MenuItem>
                     <MenuItem value="Medium">Medium</MenuItem>
                     <MenuItem value="Low">Low</MenuItem>
@@ -157,30 +177,75 @@ export default function AddDefectForm() {
                   <InputLabel ref={inputLabel} htmlFor="def">
                     Priority
                   </InputLabel>
-                  <Select value={value} onChange={handleChange}>
+                  <Select
+                    id="defect-priority"
+                    value={value}
+                    onChange={handleChange}
+                  >
                     <MenuItem value="High">High</MenuItem>
                     <MenuItem value="Medium">Medium</MenuItem>
                     <MenuItem value="Low">Low</MenuItem>
                   </Select>
                 </FormControl>
+
                 <FormControl required className={classes.formControl}>
-                  <InputLabel ref={inputLabel} htmlFor="def">
+                  <InputLabel ref={inputLabel} htmlFor="assigned-to">
                     Assigned To
                   </InputLabel>
-                  <Select value={value} onChange={handleChange}>
+                  <Select
+                    id="assigned-to"
+                    value={value}
+                    onChange={handleChange}
+                  >
                     <MenuItem value="U-2541">U-2541</MenuItem>
                     <MenuItem value="U-2548">U-2548</MenuItem>
                     <MenuItem value="U-2556">U-2556</MenuItem>
                   </Select>
                 </FormControl>
+
+                <FormControl required className={classes.formControl}>
+                  <InputLabel ref={inputLabel} htmlFor="defect-status">
+                    Status
+                  </InputLabel>
+                  <Select
+                    id="defect-status"
+                    value={value}
+                    onChange={handleChange}
+                  >
+                    <MenuItem value="New">New</MenuItem>
+                    <MenuItem value="Open">Open</MenuItem>
+                    <MenuItem value="Fixed">Fixed</MenuItem>
+                    <MenuItem value="Rejected">Rejected</MenuItem>
+                    <MenuItem value="Re-Opened">Re-Opened</MenuItem>
+                    <MenuItem value="Closed">Closed</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+              <div>
+                <TextField
+                  required
+                  id="found-in"
+                  label="Found In"
+                  className={classes.textField}
+                  margin="normal"
+                  variant="outlined"
+                />
+                <TextField
+                  required
+                  id="fixed-in"
+                  label="Fixed In"
+                  className={classes.textField}
+                  margin="normal"
+                  variant="outlined"
+                />
                 <input
                   accept="image/*"
                   className={classes.input}
-                  id="contained-button-file"
+                  id="defect-screenshot"
                   multiple
                   type="file"
                 />
-                <label htmlFor="contained-button-file">
+                <label htmlFor="defect-screenshot">
                   <Button
                     variant="outlined"
                     component="span"
@@ -193,7 +258,7 @@ export default function AddDefectForm() {
               <div>
                 <TextField
                   required
-                  id="project-desc"
+                  id="defect-desc"
                   label="Description"
                   multiline
                   rows="2"
@@ -203,7 +268,7 @@ export default function AddDefectForm() {
                 />
                 <TextField
                   required
-                  id="project-desc"
+                  id="defect-steps"
                   label="Steps to Re-create"
                   multiline
                   rows="2"

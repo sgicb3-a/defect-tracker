@@ -4,9 +4,6 @@ import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
 import DefectSeverityCustomToolbar from "./DefectSeverityCustomToolbar";
 import DefectSeverityCustomToolbarSelect from "./DefectSeverityCustomToolbarSelect";
-import TrendingUpIcon from "@material-ui/icons/TrendingUp";
-import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
-import TrendingDownIcon from "@material-ui/icons/TrendingDown";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,22 +42,6 @@ const columns = [
       filter: true,
       sort: false
     }
-  },
-  {
-    name: "Icon",
-    label: "Icon",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "Color",
-    label: "Color",
-    options: {
-      filter: true,
-      sort: false
-    }
   }
 ];
 
@@ -68,35 +49,17 @@ const data = [
   {
     Id: "DS-001",
     Name: "High",
-    Description: "The defect affects critical functionality or critical data",
-    Icon: <TrendingUpIcon />,
-    Color: (
-      <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="5" width="60" height="30" fill="red" />
-      </svg>
-    )
+    Description: "The defect affects critical functionality or critical data"
   },
   {
     Id: "DS-002",
     Name: "Medium",
-    Description: "The defect affects major functionality or major data",
-    Icon: <TrendingFlatIcon />,
-    Color: (
-      <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="5" width="60" height="30" fill="orange" />
-      </svg>
-    )
+    Description: "The defect affects major functionality or major data"
   },
   {
     Id: "DS-003",
     Name: "Low",
-    Description: "The defect affects minor functionality or non-critical data",
-    Icon: <TrendingDownIcon />,
-    Color: (
-      <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="5" width="60" height="30" fill="yellow" />
-      </svg>
-    )
+    Description: "The defect affects minor functionality or non-critical data"
   }
 ];
 

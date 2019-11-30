@@ -4,9 +4,6 @@ import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
 import DefectPriorityCustomToolbar from "./DefectPriorityCustomToolbar";
 import DefectPriorityCustomToolbarSelect from "./DefectPriorityCustomToolbarSelect";
-import TrendingUpIcon from "@material-ui/icons/TrendingUp";
-import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
-import TrendingDownIcon from "@material-ui/icons/TrendingDown";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,22 +42,6 @@ const columns = [
       filter: true,
       sort: false
     }
-  },
-  {
-    name: "Icon",
-    label: "Icon",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "Color",
-    label: "Color",
-    options: {
-      filter: true,
-      sort: false
-    }
   }
 ];
 
@@ -68,36 +49,18 @@ const data = [
   {
     PriorityId: "DP-001",
     PriorityName: "High",
-    Description: "Must be fixed immediately / in the next build",
-    Icon: <TrendingUpIcon />,
-    Color: (
-      <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="5" width="60" height="30" fill="red" />
-      </svg>
-    )
+    Description: "Must be fixed immediately / in the next build"
   },
   {
     PriorityId: "DP-002",
     PriorityName: "Medium",
     Description:
-      "Must be fixed in any of the upcoming builds but should be included in the release",
-    Icon: <TrendingFlatIcon />,
-    Color: (
-      <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="5" width="60" height="30" fill="orange" />
-      </svg>
-    )
+      "Must be fixed in any of the upcoming builds but should be included in the release"
   },
   {
     PriorityId: "DP-003",
     PriorityName: "Low",
-    Description: "May be fixed after the release / in the next release",
-    Icon: <TrendingDownIcon />,
-    Color: (
-      <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="5" width="60" height="30" fill="yellow" />
-      </svg>
-    )
+    Description: "May be fixed after the release / in the next release"
   }
 ];
 

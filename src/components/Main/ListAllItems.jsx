@@ -49,6 +49,10 @@ export default function ListAllItems() {
     false
   );
   const [openSettings, setOpenSettings] = React.useState(false);
+  const [
+    openProjectConfiguration,
+    setOpenProjectConfiguration
+  ] = React.useState(false);
   const [openDefectConfiguration, setOpenDefectConfiguration] = React.useState(
     false
   );
@@ -77,6 +81,10 @@ export default function ListAllItems() {
 
   const handleSettingsClick = () => {
     setOpenSettings(!openSettings);
+  };
+
+  const handleProjectConfigurationClick = () => {
+    setOpenProjectConfiguration(!openProjectConfiguration);
   };
 
   const handleDefectConfigurationClick = () => {
@@ -334,17 +342,6 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/defect-tracker/settings/company-profile"}
-            >
-              <ListItemIcon>
-                <Avatar className={classes.customAvatar}>CP</Avatar>
-              </ListItemIcon>
-              <ListItemText primary="Company Profile" />
-            </ListItem>
-            <ListItem
-              button
-              className={classes.nested}
-              component={Link}
               to={"/defect-tracker/settings/user-profile"}
             >
               <ListItemIcon>
@@ -352,6 +349,74 @@ export default function ListAllItems() {
               </ListItemIcon>
               <ListItemText primary="User Profile" />
             </ListItem>
+
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to={"/defect-tracker/settings/license-configuration"}
+            >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>LC</Avatar>
+              </ListItemIcon>
+              <ListItemText primary="License Configuration" />
+            </ListItem>
+
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to={"/defect-tracker/settings/employee-configuration"}
+            >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>EC</Avatar>
+              </ListItemIcon>
+              <ListItemText primary="Employee Configuration" />
+            </ListItem>
+
+            <ListItem
+              button
+              className={classes.nested}
+              onClick={handleProjectConfigurationClick}
+            >
+              <ListItemIcon>
+                <Avatar className={classes.customAvatar}>PC</Avatar>
+              </ListItemIcon>
+              <ListItemText primary="Project Configuration" />
+              {openProjectConfiguration ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse
+              in={openProjectConfiguration}
+              timeout="auto"
+              unmountOnExit
+            >
+              <List component="div" disablePadding>
+                <ListItem
+                  button
+                  className={classes.dualNested}
+                  component={Link}
+                  to={"/defect-tracker/settings/project-configuration/role"}
+                >
+                  <ListItemText primary="Role" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.dualNested}
+                  component={Link}
+                  to={"/defect-tracker/settings/project-configuration/type"}
+                >
+                  <ListItemText primary="Type" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.dualNested}
+                  component={Link}
+                  to={"/defect-tracker/settings/project-configuration/status"}
+                >
+                  <ListItemText primary="Status" />
+                </ListItem>
+              </List>
+            </Collapse>
             <ListItem
               button
               className={classes.nested}
@@ -450,12 +515,12 @@ export default function ListAllItems() {
               button
               className={classes.nested}
               component={Link}
-              to={"/defect-tracker/settings/audit-log"}
+              to={"/defect-tracker/settings/defect-log"}
             >
               <ListItemIcon>
-                <Avatar className={classes.customAvatar}>AL</Avatar>
+                <Avatar className={classes.customAvatar}>DL</Avatar>
               </ListItemIcon>
-              <ListItemText primary="Audit Log" />
+              <ListItemText primary="Defect Log" />
             </ListItem>
             <ListItem
               button

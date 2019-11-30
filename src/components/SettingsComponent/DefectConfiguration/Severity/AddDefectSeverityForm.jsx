@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import ColorPicker from "./ColorPicker";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,15 +20,29 @@ const useStyles = makeStyles(theme => ({
   table: {
     minWidth: 700
   },
-  button: {
+  buttonCustom: {
     marginRight: theme.spacing(3),
     marginTop: theme.spacing(2),
-    width: "250px"
+    width: "250px",
+    height: "56px"
+  },
+  button: {
+    marginTop: theme.spacing(3),
+    marginLeft: theme.spacing(1),
+    width: "120px"
   }
 }));
 
 export default function AddDefectSeverityForm() {
   const classes = useStyles();
+  const [values, setValues] = React.useState({
+    name: "",
+    description: ""
+  });
+
+  const handleChange = name => event => {
+    setValues({ ...values, [name]: event.target.value });
+  };
 
   return (
     <div>
@@ -37,37 +50,38 @@ export default function AddDefectSeverityForm() {
         <Grid container justify="space-between">
           <TextField
             required
-            id="project-name"
+            id="severity-name"
             label="Severity"
             className={classes.textField}
+            value={values.name}
+            onChange={handleChange("name")}
             margin="normal"
             variant="outlined"
           />
           <TextField
             required
-            id="project-name"
+            id="severity-desc"
             label="Description"
             className={classes.textField}
+            value={values.description}
+            onChange={handleChange("description")}
             margin="normal"
             variant="outlined"
           />
-          <input
-            accept="image/*"
-            className={classes.input}
-            id="contained-button-file"
-            multiple
-            type="file"
-          />
-          <label htmlFor="contained-button-file">
-            <Button
-              variant="outlined"
-              component="span"
-              className={classes.button}
-            >
-              Upload Icon
-            </Button>
-          </label>
-          <ColorPicker />
+        </Grid>
+        <Grid container justify="flex-end">
+          <Button color="primary" size="large" className={classes.button}>
+            Close
+          </Button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            size="large"
+            className={classes.button}
+          >
+            Add
+          </Button>
         </Grid>
       </form>
     </div>

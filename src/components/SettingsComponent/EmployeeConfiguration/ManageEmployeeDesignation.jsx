@@ -2,7 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
-import LogCustomToolbarSelect from "./LogCustomToolbarSelect";
+import EmployeeDesignationCustomToolbar from "./EmployeeDesignationCustomToolbar";
+import EmployeeDesignationCustomToolbarSelect from "./EmployeeDesignationCustomToolbarSelect";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,32 +20,24 @@ const useStyles = makeStyles(theme => ({
 
 const columns = [
   {
-    name: "Date",
-    label: "Date",
+    name: "designationId",
+    label: "Designation Id",
     options: {
       filter: true,
       sort: true
     }
   },
   {
-    name: "EmployeeId",
-    label: "Employee Id",
+    name: "employeeDesignation",
+    label: "Employee Designation",
     options: {
       filter: true,
       sort: false
     }
   },
   {
-    name: "Name",
-    label: "Name",
-    options: {
-      filter: true,
-      sort: false
-    }
-  },
-  {
-    name: "WorkCategory",
-    label: "Work Category",
+    name: "designationDescription",
+    label: "Designation Description",
     options: {
       filter: true,
       sort: false
@@ -54,10 +47,9 @@ const columns = [
 
 const data = [
   {
-    Date: "27/10/2019",
-    EmployeeId: "E-100",
-    Name: "Bals",
-    WorkCategory: "UI"
+    designationId: "DS-001",
+    employeeDesignation: "Tech Lead",
+    designationDescription: "More than 4+ Years experience in Software development field"
   }
 ];
 
@@ -66,12 +58,15 @@ const options = {
   selectableRows: "single",
   selectableRowsOnClick: true,
   responsive: "scrollMaxHeight",
+  customToolbar: () => {
+    return <EmployeeDesignationCustomToolbar/>;
+  },
   customToolbarSelect: () => {
-    return <LogCustomToolbarSelect />;
+    return <EmployeeDesignationCustomToolbarSelect/>;
   }
 };
 
-export default function ManageLog() {
+export default function ManageEmployeeDesignation() {
   const classes = useStyles();
 
   return (

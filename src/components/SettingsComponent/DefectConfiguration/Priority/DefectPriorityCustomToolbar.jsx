@@ -1,15 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
-import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import Fab from "@material-ui/core/Fab";
 import Dialog from "@material-ui/core/Dialog";
 import Divider from "@material-ui/core/Divider";
-import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Button from "@material-ui/core/Button";
 import AddDefectPriorityForm from "./AddDefectPriorityForm";
 
 const useStyles = makeStyles(theme => ({
@@ -18,8 +15,8 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     overflowX: "auto"
   },
-  input: {
-    display: "none"
+  fab: {
+    marginLeft: theme.spacing(1)
   }
 }));
 
@@ -38,16 +35,15 @@ export default function DefectPriorityCustomToolbar() {
   return (
     <React.Fragment>
       <Tooltip title={"Add"}>
-        <IconButton className={classes.iconButton} onClick={handleAddOpen}>
-          <Fab
-            color="primary"
-            aria-label="add"
-            className={classes.fab}
-            size="small"
-          >
-            <AddIcon />
-          </Fab>
-        </IconButton>
+        <Fab
+          color="primary"
+          aria-label="add"
+          className={classes.fab}
+          size="small"
+          onClick={handleAddOpen}
+        >
+          <AddIcon />
+        </Fab>
       </Tooltip>
       <Dialog
         open={openAdd}
@@ -61,14 +57,6 @@ export default function DefectPriorityCustomToolbar() {
         <DialogContent>
           <AddDefectPriorityForm />
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleAddClose} color="primary">
-            Cancel
-          </Button>
-          <Button variant="contained" onClick={handleAddClose} color="primary">
-            Add
-          </Button>
-        </DialogActions>
       </Dialog>
     </React.Fragment>
   );

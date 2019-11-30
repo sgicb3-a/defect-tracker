@@ -2,6 +2,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import Grid from "@material-ui/core/Grid";
 import HRAllocationCustomToolbarSelect from "./RoleAllocationCustomToolbarSelect";
 
 const useStyles = makeStyles(theme => ({
@@ -11,9 +16,15 @@ const useStyles = makeStyles(theme => ({
     overflowX: "auto"
   },
   container: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2)
+  },
+  formControl: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(3),
+    margin: theme.spacing(1),
+    width: "230px"
   }
 }));
 
@@ -35,8 +46,8 @@ const columns = [
     }
   },
   {
-    name: "Role",
-    label: "Role",
+    name: "Designation",
+    label: "Designation",
     options: {
       filter: true,
       sort: false
@@ -56,13 +67,13 @@ const data = [
   {
     EmployeeId: "E-100",
     Name: "Bals",
-    Role: "Developer",
+    Designation: "Developer",
     ProjectName: "CMS"
   },
   {
     EmployeeId: "E-101",
     Name: "Sankar",
-    Role: "QA",
+    Designation: "QA",
     ProjectName: "LMS"
   }
 ];
@@ -78,10 +89,25 @@ const options = {
 
 export default function ManageRoleAllocation() {
   const classes = useStyles();
+  const [value, setValue] = React.useState("");
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
       <Container className={classes.container}>
+        <Grid container justify="flex-start">
+          <FormControl required className={classes.formControl}>
+            <InputLabel htmlFor="role">Role</InputLabel>
+            <Select id="role" value={value} onChange={handleChange}>
+              <MenuItem value="Software Engineer">Software Engineer</MenuItem>
+              <MenuItem value="Senior SE">Senior SE</MenuItem>
+              <MenuItem value="QA">QA</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
         <MUIDataTable data={data} columns={columns} options={options} />
       </Container>
     </div>

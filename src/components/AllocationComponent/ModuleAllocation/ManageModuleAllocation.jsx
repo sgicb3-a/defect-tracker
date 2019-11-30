@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import MUIDataTable from "mui-datatables";
 import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -19,6 +20,13 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1),
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2)
+  },
+  paper: {
+    color: theme.palette.text.secondary,
+    borderRadius: "4px",
+    boxShadow:
+      "0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.1), 0px 1px 10px 0px rgba(0,0,0,0.12)",
+    marginTop: theme.spacing(2)
   },
   formControl: {
     marginLeft: theme.spacing(1),
@@ -98,17 +106,24 @@ export default function ManageModuleAllocation() {
   return (
     <div>
       <Container className={classes.container}>
-        <Grid container justify="flex-start">
-          <FormControl required className={classes.formControl}>
-            <InputLabel htmlFor="module">Module</InputLabel>
-            <Select id="module" value={value} onChange={handleChange}>
-              <MenuItem value="Left Drawer">Left Drawer</MenuItem>
-              <MenuItem value="Header">Header</MenuItem>
-              <MenuItem value="Footer">Footer</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-        <MUIDataTable data={data} columns={columns} options={options} />
+        <Paper
+          className={classes.paper}
+          components={{
+            Container: props => <Paper {...props} elevation={4} />
+          }}
+        >
+          <Grid container justify="flex-start">
+            <FormControl required className={classes.formControl}>
+              <InputLabel htmlFor="module">Module</InputLabel>
+              <Select id="module" value={value} onChange={handleChange}>
+                <MenuItem value="Left Drawer">Left Drawer</MenuItem>
+                <MenuItem value="Header">Header</MenuItem>
+                <MenuItem value="Footer">Footer</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <MUIDataTable data={data} columns={columns} options={options} />
+        </Paper>
       </Container>
     </div>
   );

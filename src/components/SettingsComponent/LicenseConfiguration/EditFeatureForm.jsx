@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
@@ -37,10 +36,6 @@ const useStyles = makeStyles(theme => ({
 export default function EditFeatureForm() {
   const classes = useStyles();
 
-  // const handleChange = name => event => {
-  //   setValues({ ...values, [name]: event.target.value });
-  // };
-
   return (
     <div>
       <form className={classes.container} autoComplete="off">
@@ -65,20 +60,13 @@ export default function EditFeatureForm() {
           </div>
         </Grid>
         <Grid container justify="flex-end">
-          <Button
-            className={classes.button}
-            color="primary"
-            component={Link}
-            // to={"/settings/license-configuration"}
-          >
+          <Button className={classes.button} color="primary">
             Cancel
           </Button>
           <Button
             className={classes.button}
             variant="contained"
             color="primary"
-            component={Link}
-            //to={"/settings/license-configuration"}
           >
             Update
           </Button>

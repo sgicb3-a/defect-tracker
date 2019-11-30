@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/defect-tracker/static/css/main.b100e6da.chunk.css",
-    "main.js": "/defect-tracker/static/js/main.924860dc.chunk.js",
-    "main.js.map": "/defect-tracker/static/js/main.924860dc.chunk.js.map",
+    "main.js": "/defect-tracker/static/js/main.0b763263.chunk.js",
+    "main.js.map": "/defect-tracker/static/js/main.0b763263.chunk.js.map",
     "runtime-main.js": "/defect-tracker/static/js/runtime-main.fd0e81cc.js",
     "runtime-main.js.map": "/defect-tracker/static/js/runtime-main.fd0e81cc.js.map",
     "static/css/2.ee97571d.chunk.css": "/defect-tracker/static/css/2.ee97571d.chunk.css",
-    "static/js/2.6048d7c5.chunk.js": "/defect-tracker/static/js/2.6048d7c5.chunk.js",
-    "static/js/2.6048d7c5.chunk.js.map": "/defect-tracker/static/js/2.6048d7c5.chunk.js.map",
+    "static/js/2.e93bc474.chunk.js": "/defect-tracker/static/js/2.e93bc474.chunk.js",
+    "static/js/2.e93bc474.chunk.js.map": "/defect-tracker/static/js/2.e93bc474.chunk.js.map",
     "index.html": "/defect-tracker/index.html",
-    "precache-manifest.4f6c440e5e354024e8aa1d8b23f06b54.js": "/defect-tracker/precache-manifest.4f6c440e5e354024e8aa1d8b23f06b54.js",
+    "precache-manifest.b1f6ba9f3f89a86d359670475ac085c3.js": "/defect-tracker/precache-manifest.b1f6ba9f3f89a86d359670475ac085c3.js",
     "service-worker.js": "/defect-tracker/service-worker.js",
     "static/css/2.ee97571d.chunk.css.map": "/defect-tracker/static/css/2.ee97571d.chunk.css.map",
     "static/css/main.b100e6da.chunk.css.map": "/defect-tracker/static/css/main.b100e6da.chunk.css.map",
@@ -18,8 +18,8 @@
   "entrypoints": [
     "static/js/runtime-main.fd0e81cc.js",
     "static/css/2.ee97571d.chunk.css",
-    "static/js/2.6048d7c5.chunk.js",
+    "static/js/2.e93bc474.chunk.js",
     "static/css/main.b100e6da.chunk.css",
-    "static/js/main.924860dc.chunk.js"
+    "static/js/main.0b763263.chunk.js"
   ]
 }

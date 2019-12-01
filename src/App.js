@@ -9,16 +9,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 function App() {
-  let today = new Date();
-  let time = today.getHours();
-
-  let night = false;
-
-  if (time > 17 || time < 6) {
-    night = true;
-  }
-
-  const [dark, setDark] = React.useState(night);
+  const [dark, setDark] = React.useState(false);
 
   const changeTheme = () => {
     setDark(!dark);

@@ -452,16 +452,7 @@ export default function ListAllItems() {
                 >
                   <ListItemText primary="Role" />
                 </ListItem>
-                <ListItem
-                  button
-                  className={classes.dualNested}
-                  onClick={() => updateSelected(22)}
-                  selected={select === 22}
-                  component={Link}
-                  to={"/defect-tracker/settings/project-configuration/type"}
-                >
-                  <ListItemText primary="Type" />
-                </ListItem>
+
                 <ListItem
                   button
                   className={classes.dualNested}

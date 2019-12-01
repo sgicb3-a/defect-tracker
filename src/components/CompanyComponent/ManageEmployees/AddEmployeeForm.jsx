@@ -168,14 +168,22 @@ export default function AddEmployeeForm() {
               </div>
 
               <div>
-                <TextField
-                  required
-                  id="designation"
-                  label="Designation"
-                  className={classes.textField}
-                  margin="normal"
-                  variant="outlined"
-                />
+                <FormControl required className={classes.formControl}>
+                  <InputLabel ref={inputLabel} htmlFor="bench">
+                    Designation
+                  </InputLabel>
+                  <Select
+                    id="bench"
+                    labelWidth={labelWidth}
+                    value={value}
+                    onChange={handleChange}
+                  >
+                    <MenuItem value="Software Engineer">
+                      Software Engineer
+                    </MenuItem>
+                    <MenuItem value="QA">QA</MenuItem>
+                  </Select>
+                </FormControl>
 
                 <FormControl required className={classes.formControl}>
                   <InputLabel ref={inputLabel} htmlFor="bench">

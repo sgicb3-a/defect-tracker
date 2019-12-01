@@ -50,7 +50,6 @@ import ManageClient from "../CompanyComponent/ManageClients/ManageClient";
 import UserProfile from "../SettingsComponent/UserProfile/UserProfile";
 import ManageProjectRole from "../SettingsComponent/ProjectConfiguration/Role/ManageProjectRole";
 import ManageProjectStatus from "../SettingsComponent/ProjectConfiguration/ProjectStatus/ManageProjectStatus";
-import ManageProjectType from "../SettingsComponent/ProjectConfiguration/ProjectType/ManageProjectType";
 
 export default function RouteDetails({ isDark }) {
   return (
@@ -489,19 +488,6 @@ export default function RouteDetails({ isDark }) {
             <Typography color="textPrimary">Role</Typography>
           </Breadcrumbs>
           <ManageProjectRole />
-        </Route>
-
-        <Route path="/defect-tracker/settings/project-configuration/type">
-          <Breadcrumbs
-            separator={<NavigateNextIcon fontSize="small" />}
-            aria-label="breadcrumb"
-          >
-            <Links color="inherit">Home</Links>
-            <Links color="inherit">Settings</Links>
-            <Links color="inherit">Project-Configuration</Links>
-            <Typography color="textPrimary">Type</Typography>
-          </Breadcrumbs>
-          <ManageProjectType />
         </Route>
 
         <Route path="/defect-tracker/settings/project-configuration/status">

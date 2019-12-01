@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AddLicenseForm() {
+export default function EditLicenseForm() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     gilad: true,

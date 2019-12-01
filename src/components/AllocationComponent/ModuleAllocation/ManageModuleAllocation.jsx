@@ -29,10 +29,10 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2)
   },
   formControl: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(3),
+    marginLeft: theme.spacing(3),
     margin: theme.spacing(1),
-    width: "230px"
+    width: "230px",
+    textAlign: "left"
   }
 }));
 
